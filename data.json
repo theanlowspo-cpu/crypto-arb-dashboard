@@ -1,46 +1,46 @@
 {
-  "lastUpdate": 1771322400000,
+  "lastUpdate": 1771329499757,
   "totalProfit": 0,
-  "tradeCount": 3,
+  "tradeCount": 4,
   "maxPositions": 3,
   "winRate": null,
-  "balance": 150.10,
+  "balance": 1.08194048,
   "positions": [
     {
       "symbol": "RIVERUSDT",
-      "entryPrice": "12.052",
-      "markPrice": "12.060",
+      "entryPrice": 12.052,
+      "markPrice": "12.03969223",
       "qty": 8.2,
       "leverage": 2,
-      "fundingRate": "-1.10",
-      "unrealizedPnl": "0.07",
+      "fundingRate": "-1.0433",
+      "unrealizedPnl": "-0.10092371",
       "settlementsCollected": 0,
       "targetRounds": 3,
       "openTime": 1771321791768
     },
     {
       "symbol": "ORCAUSDT",
-      "entryPrice": "1.1560",
-      "markPrice": "1.2400",
+      "entryPrice": 1.156,
+      "markPrice": "1.21802051",
       "qty": 86.5,
       "leverage": 2,
-      "fundingRate": "-1.27",
-      "unrealizedPnl": "7.26",
+      "fundingRate": "-0.9773",
+      "unrealizedPnl": "5.36477411",
       "settlementsCollected": 0,
       "targetRounds": 3,
-      "openTime": 1771321883000
+      "openTime": 1771322083917
     },
     {
       "symbol": "OGNUSDT",
-      "entryPrice": "0.0257",
-      "markPrice": "0.0254",
+      "entryPrice": 0.0257,
+      "markPrice": "0.02518089",
       "qty": 3906,
       "leverage": 2,
-      "fundingRate": "-0.53",
-      "unrealizedPnl": "-1.17",
+      "fundingRate": "-0.4922",
+      "unrealizedPnl": "-2.02764366",
       "settlementsCollected": 0,
       "targetRounds": 3,
-      "openTime": 1771325084000
+      "openTime": 1771327484413
     }
   ],
   "history": []
