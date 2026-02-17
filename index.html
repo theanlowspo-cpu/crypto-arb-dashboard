@@ -1,0 +1,441 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>🍟 開心套利小廚房</title>
+<style>
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body {
+  font-family: 'Segoe UI', Arial, sans-serif;
+  background: linear-gradient(135deg, #FFF3CD 0%, #FFECB3 50%, #FFE082 100%);
+  min-height: 100vh;
+  color: #333;
+}
+
+/* 頂部橫幅 */
+.header {
+  background: linear-gradient(90deg, #DA291C, #FF5722, #DA291C);
+  color: white;
+  padding: 20px;
+  text-align: center;
+  box-shadow: 0 4px 15px rgba(218,41,28,0.3);
+  position: relative;
+  overflow: hidden;
+}
+.header h1 { font-size: 2em; text-shadow: 2px 2px 4px rgba(0,0,0,0.3); }
+.header .subtitle { font-size: 1.1em; opacity: 0.9; margin-top: 5px; }
+.header .mascot {
+  position: absolute; right: 20px; top: 50%; transform: translateY(-50%);
+  width: 80px; height: 80px; border-radius: 50%; border: 3px solid #FFC107;
+  object-fit: cover;
+}
+.header .mascot-left {
+  position: absolute; left: 20px; top: 50%; transform: translateY(-50%);
+  width: 80px; height: 80px; border-radius: 50%; border: 3px solid #FFC107;
+  object-fit: cover;
+}
+
+/* 狀態列 */
+.status-bar {
+  background: #FFC107;
+  padding: 10px 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-weight: bold;
+  color: #333;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+.status-item { display: flex; align-items: center; gap: 5px; }
+.status-dot { width: 12px; height: 12px; border-radius: 50%; display: inline-block; }
+.dot-green { background: #4CAF50; box-shadow: 0 0 8px #4CAF50; }
+.dot-red { background: #f44336; box-shadow: 0 0 8px #f44336; }
+
+/* 主內容 */
+.container { max-width: 1200px; margin: 0 auto; padding: 20px; }
+
+/* 總覽卡片 */
+.summary-cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 15px;
+  margin-bottom: 20px;
+}
+.card {
+  background: white;
+  border-radius: 16px;
+  padding: 20px;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+  text-align: center;
+  border-top: 4px solid #FFC107;
+  transition: transform 0.2s;
+}
+.card:hover { transform: translateY(-3px); }
+.card .emoji { font-size: 2em; }
+.card .label { color: #888; font-size: 0.85em; margin-top: 5px; }
+.card .value { font-size: 1.8em; font-weight: bold; margin-top: 5px; }
+.card .value.profit { color: #4CAF50; }
+.card .value.loss { color: #f44336; }
+
+/* 持倉區 */
+.section-title {
+  font-size: 1.4em;
+  color: #DA291C;
+  margin: 25px 0 15px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.positions-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 15px;
+  margin-bottom: 20px;
+}
+.position-card {
+  background: white;
+  border-radius: 16px;
+  padding: 20px;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+  border-left: 5px solid #FFC107;
+}
+.position-card .symbol {
+  font-size: 1.3em;
+  font-weight: bold;
+  color: #DA291C;
+}
+.position-card .details {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 8px;
+  margin-top: 12px;
+  font-size: 0.9em;
+}
+.position-card .detail-label { color: #888; }
+.position-card .detail-value { font-weight: bold; text-align: right; }
+.position-card .pnl-bar {
+  margin-top: 12px;
+  height: 8px;
+  background: #eee;
+  border-radius: 4px;
+  overflow: hidden;
+}
+.position-card .pnl-fill {
+  height: 100%;
+  border-radius: 4px;
+  transition: width 0.5s;
+}
+.pnl-positive { background: linear-gradient(90deg, #4CAF50, #8BC34A); }
+.pnl-negative { background: linear-gradient(90deg, #f44336, #FF5722); }
+
+/* 歷史交易 */
+.history-table {
+  width: 100%;
+  background: white;
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+  margin-bottom: 20px;
+}
+.history-table table { width: 100%; border-collapse: collapse; }
+.history-table th {
+  background: #DA291C;
+  color: white;
+  padding: 12px 15px;
+  text-align: left;
+  font-size: 0.9em;
+}
+.history-table td {
+  padding: 10px 15px;
+  border-bottom: 1px solid #f0f0f0;
+  font-size: 0.85em;
+}
+.history-table tr:hover { background: #FFF8E1; }
+
+/* 可愛裝飾圖 */
+.cute-section {
+  text-align: center;
+  padding: 20px;
+}
+.cute-section img {
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  border: 4px solid #FFC107;
+  margin: 0 10px;
+  box-shadow: 0 4px 15px rgba(255,193,7,0.3);
+}
+
+/* 費率排行 */
+.rate-list {
+  background: white;
+  border-radius: 16px;
+  padding: 20px;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+  margin-bottom: 20px;
+}
+.rate-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 8px 0;
+  border-bottom: 1px solid #f5f5f5;
+}
+.rate-item:last-child { border-bottom: none; }
+.rate-badge {
+  background: #FFC107;
+  color: #333;
+  padding: 2px 8px;
+  border-radius: 12px;
+  font-size: 0.8em;
+  font-weight: bold;
+}
+
+/* Footer */
+.footer {
+  text-align: center;
+  padding: 20px;
+  color: #888;
+  font-size: 0.85em;
+}
+.footer .love { color: #DA291C; }
+
+/* 動畫 */
+@keyframes float {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-10px); }
+}
+.floating { animation: float 3s ease-in-out infinite; }
+
+/* 手機適配 */
+@media (max-width: 600px) {
+  .header h1 { font-size: 1.4em; }
+  .header .mascot, .header .mascot-left { display: none; }
+  .summary-cards { grid-template-columns: repeat(2, 1fr); }
+  .positions-grid { grid-template-columns: 1fr; }
+  .card .value { font-size: 1.4em; }
+}
+</style>
+</head>
+<body>
+
+<div class="header">
+  <img src="img/hamster1.jpg" class="mascot-left" alt="mascot">
+  <h1>🍟 開心套利小廚房 🍔</h1>
+  <div class="subtitle">自動幫你賺零用錢的快樂機器 💰</div>
+  <img src="img/rocket_cat1.jpg" class="mascot" alt="mascot">
+</div>
+
+<div class="status-bar">
+  <div class="status-item">
+    <span class="status-dot dot-green" id="statusDot"></span>
+    <span id="statusText">系統運行中</span>
+  </div>
+  <div class="status-item">🕐 更新: <span id="lastUpdate">載入中...</span></div>
+  <div class="status-item">⏱️ 下次結算: <span id="nextSettlement">計算中...</span></div>
+</div>
+
+<div class="container">
+  <!-- 總覽卡片 -->
+  <div class="summary-cards">
+    <div class="card">
+      <div class="emoji">💰</div>
+      <div class="label">累計盈虧</div>
+      <div class="value" id="totalPnl">$0.00</div>
+    </div>
+    <div class="card">
+      <div class="emoji">📊</div>
+      <div class="label">當前持倉</div>
+      <div class="value" id="posCount">0/3</div>
+    </div>
+    <div class="card">
+      <div class="emoji">🎯</div>
+      <div class="label">交易次數</div>
+      <div class="value" id="tradeCount">0</div>
+    </div>
+    <div class="card">
+      <div class="emoji">🏆</div>
+      <div class="label">勝率</div>
+      <div class="value" id="winRate">--%</div>
+    </div>
+    <div class="card">
+      <div class="emoji">💵</div>
+      <div class="label">帳戶餘額</div>
+      <div class="value" id="balance">$0.00</div>
+    </div>
+    <div class="card">
+      <div class="emoji">📈</div>
+      <div class="label">未實現盈虧</div>
+      <div class="value" id="unrealizedPnl">$0.00</div>
+    </div>
+  </div>
+
+  <!-- 當前持倉 -->
+  <div class="section-title">🍟 當前持倉</div>
+  <div class="positions-grid" id="positionsGrid">
+    <div class="position-card"><p style="text-align:center;color:#888;">載入中...</p></div>
+  </div>
+
+  <!-- 可愛裝飾 -->
+  <div class="cute-section">
+    <img src="img/hamster2.jpg" class="floating" alt="cute">
+    <img src="img/rocket_cat2.jpg" class="floating" style="animation-delay:1s" alt="cute">
+  </div>
+
+  <!-- 交易歷史 -->
+  <div class="section-title">📋 交易歷史</div>
+  <div class="history-table">
+    <table>
+      <thead>
+        <tr>
+          <th>時間</th>
+          <th>幣種</th>
+          <th>動作</th>
+          <th>入場價</th>
+          <th>出場價</th>
+          <th>盈虧</th>
+          <th>費率輪數</th>
+        </tr>
+      </thead>
+      <tbody id="historyBody">
+        <tr><td colspan="7" style="text-align:center;color:#888;">載入中...</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="footer">
+    <p>🍔 用愛與演算法製作 <span class="love">❤️</span> 給最可愛的寶貝 🍟</p>
+    <p style="margin-top:5px;">自動更新每 5 分鐘 | 資料僅供參考</p>
+  </div>
+</div>
+
+<script>
+const DATA_URL = 'data.json';
+const REFRESH_MS = 60 * 1000; // 每分鐘刷新
+
+function formatTime(ts) {
+  if (!ts) return '--';
+  const d = new Date(ts);
+  return d.toLocaleString('zh-TW', { timeZone: 'Asia/Taipei', hour12: false });
+}
+
+function formatUSD(n) {
+  const v = parseFloat(n) || 0;
+  return (v >= 0 ? '+' : '') + '$' + v.toFixed(2);
+}
+
+function getNextSettlement() {
+  const now = new Date();
+  const hours = [0, 8, 16];
+  for (const h of hours) {
+    const target = new Date(now);
+    target.setUTCHours(h, 0, 0, 0);
+    if (target > now) {
+      const diff = Math.floor((target - now) / 60000);
+      return `${Math.floor(diff/60)}h ${diff%60}m`;
+    }
+  }
+  const tomorrow = new Date(now);
+  tomorrow.setUTCDate(tomorrow.getUTCDate() + 1);
+  tomorrow.setUTCHours(0, 0, 0, 0);
+  const diff = Math.floor((tomorrow - now) / 60000);
+  return `${Math.floor(diff/60)}h ${diff%60}m`;
+}
+
+function renderPositions(positions) {
+  const grid = document.getElementById('positionsGrid');
+  if (!positions || positions.length === 0) {
+    grid.innerHTML = '<div class="position-card"><p style="text-align:center;color:#888;">🍟 目前沒有持倉，等待機會中...</p></div>';
+    return;
+  }
+  grid.innerHTML = positions.map(p => {
+    const pnl = parseFloat(p.unrealizedPnl) || 0;
+    const pnlClass = pnl >= 0 ? 'profit' : 'loss';
+    const barClass = pnl >= 0 ? 'pnl-positive' : 'pnl-negative';
+    const barWidth = Math.min(Math.abs(pnl) / 5 * 100, 100);
+    return `
+      <div class="position-card">
+        <div class="symbol">${p.symbol} ${pnl >= 0 ? '🟢' : '🔴'}</div>
+        <div class="details">
+          <span class="detail-label">入場價</span><span class="detail-value">$${parseFloat(p.entryPrice).toFixed(4)}</span>
+          <span class="detail-label">當前價</span><span class="detail-value">$${parseFloat(p.markPrice || 0).toFixed(4)}</span>
+          <span class="detail-label">數量</span><span class="detail-value">${p.qty}</span>
+          <span class="detail-label">槓桿</span><span class="detail-value">${p.leverage}x</span>
+          <span class="detail-label">費率</span><span class="detail-value">${parseFloat(p.fundingRate).toFixed(4)}%</span>
+          <span class="detail-label">盈虧</span><span class="detail-value ${pnlClass}">${formatUSD(pnl)}</span>
+          <span class="detail-label">結算輪數</span><span class="detail-value">${p.settlementsCollected}/${p.targetRounds || 3}</span>
+          <span class="detail-label">開倉時間</span><span class="detail-value">${formatTime(p.openTime)}</span>
+        </div>
+        <div class="pnl-bar"><div class="pnl-fill ${barClass}" style="width:${barWidth}%"></div></div>
+      </div>`;
+  }).join('');
+}
+
+function renderHistory(history) {
+  const tbody = document.getElementById('historyBody');
+  if (!history || history.length === 0) {
+    tbody.innerHTML = '<tr><td colspan="7" style="text-align:center;color:#888;">🍔 還沒有交易紀錄</td></tr>';
+    return;
+  }
+  tbody.innerHTML = history.slice(0, 50).map(h => {
+    const pnl = parseFloat(h.pnl) || 0;
+    const pnlClass = pnl >= 0 ? 'profit' : 'loss';
+    const icon = h.action === 'STOP_LOSS' ? '🛑' : h.action === 'OPEN' ? '🎯' : '📤';
+    return `<tr>
+      <td>${formatTime(h.time)}</td>
+      <td><strong>${h.symbol}</strong></td>
+      <td>${icon} ${h.action}</td>
+      <td>$${parseFloat(h.entryPrice || 0).toFixed(4)}</td>
+      <td>$${parseFloat(h.exitPrice || 0).toFixed(4)}</td>
+      <td class="${pnlClass}"><strong>${formatUSD(pnl)}</strong></td>
+      <td>${h.rounds || '--'}</td>
+    </tr>`;
+  }).join('');
+}
+
+async function loadData() {
+  try {
+    const res = await fetch(DATA_URL + '?t=' + Date.now());
+    const data = await res.json();
+
+    // 總覽
+    const totalPnl = parseFloat(data.totalProfit) || 0;
+    document.getElementById('totalPnl').textContent = formatUSD(totalPnl);
+    document.getElementById('totalPnl').className = 'value ' + (totalPnl >= 0 ? 'profit' : 'loss');
+
+    document.getElementById('posCount').textContent = `${(data.positions || []).length}/${data.maxPositions || 3}`;
+    document.getElementById('tradeCount').textContent = data.tradeCount || 0;
+    document.getElementById('winRate').textContent = data.winRate ? data.winRate + '%' : '--%';
+    document.getElementById('balance').textContent = '$' + (parseFloat(data.balance) || 0).toFixed(2);
+
+    const unrealized = (data.positions || []).reduce((s, p) => s + (parseFloat(p.unrealizedPnl) || 0), 0);
+    document.getElementById('unrealizedPnl').textContent = formatUSD(unrealized);
+    document.getElementById('unrealizedPnl').className = 'value ' + (unrealized >= 0 ? 'profit' : 'loss');
+
+    document.getElementById('lastUpdate').textContent = formatTime(data.lastUpdate);
+    document.getElementById('nextSettlement').textContent = getNextSettlement();
+
+    // 系統狀態
+    const age = Date.now() - (data.lastUpdate || 0);
+    const online = age < 10 * 60 * 1000;
+    document.getElementById('statusDot').className = 'status-dot ' + (online ? 'dot-green' : 'dot-red');
+    document.getElementById('statusText').textContent = online ? '系統運行中 🍟' : '系統離線 ⚠️';
+
+    renderPositions(data.positions || []);
+    renderHistory(data.history || []);
+  } catch (e) {
+    console.error('載入失敗:', e);
+  }
+}
+
+loadData();
+setInterval(loadData, REFRESH_MS);
+setInterval(() => {
+  document.getElementById('nextSettlement').textContent = getNextSettlement();
+}, 60000);
+</script>
+</body>
+</html>
