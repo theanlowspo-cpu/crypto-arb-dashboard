@@ -1,10 +1,10 @@
 {
-  "lastUpdate": 1771330828361,
-  "totalProfit": -5.976317999999999,
-  "tradeCount": 4,
+  "lastUpdate": 1771331055345,
+  "totalProfit": -8.969117999999998,
+  "tradeCount": 5,
   "maxPositions": 3,
   "winRate": 0,
-  "balance": 96.13205764,
+  "balance": 96.04555764,
   "positions": [
     {
       "symbol": "ORCAUSDT",
@@ -12,7 +12,7 @@
       "markPrice": "1.17900000",
       "qty": 86.5,
       "leverage": 2,
-      "fundingRate": "-0.7363",
+      "fundingRate": "-0.7083",
       "unrealizedPnl": "1.98950000",
       "settlementsCollected": 0,
       "targetRounds": 3,
@@ -20,6 +20,24 @@
     }
   ],
   "history": [
+    {
+      "time": 1771331055290,
+      "symbol": "JTOUSDT",
+      "action": "STOP_LOSS",
+      "entryPrice": 0.344,
+      "exitPrice": 0.33368,
+      "pnl": "-2.99",
+      "rounds": 0
+    },
+    {
+      "time": 1771331055287,
+      "symbol": "OGNUSDT",
+      "action": "STOP_LOSS",
+      "entryPrice": 0.0257,
+      "exitPrice": 0.024929,
+      "pnl": "-3.01",
+      "rounds": 0
+    },
     {
       "time": 1771330828299,
       "symbol": "OGNUSDT",
