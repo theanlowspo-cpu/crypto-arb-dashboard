@@ -1,25 +1,48 @@
 {
-  "lastUpdate": 1771331128346,
-  "totalProfit": -5.976317999999999,
-  "tradeCount": 4,
+  "lastUpdate": 1771331651467,
+  "totalProfit": -8.97,
+  "tradeCount": 7,
   "maxPositions": 3,
   "winRate": 0,
-  "balance": 95.91580764,
+  "balance": 46.77588859,
   "positions": [
     {
       "symbol": "ORCAUSDT",
       "entryPrice": 1.156,
-      "markPrice": "1.17400000",
+      "markPrice": "1.19450997",
       "qty": 86.5,
       "leverage": 2,
-      "fundingRate": "-0.7083",
-      "unrealizedPnl": "1.55700000",
+      "fundingRate": "-0.6435",
+      "unrealizedPnl": "3.33111240",
       "settlementsCollected": 0,
       "targetRounds": 3,
-      "openTime": 1771322083917
+      "openTime": 1771321883000
+    },
+    {
+      "symbol": "LAUSDT",
+      "entryPrice": 0.2047,
+      "markPrice": "0.20639568",
+      "qty": 488.7,
+      "leverage": 2,
+      "fundingRate": "-0.3230",
+      "unrealizedPnl": "0.82867881",
+      "settlementsCollected": 0,
+      "targetRounds": 3,
+      "openTime": 1771331351266
     }
   ],
   "history": [
+    {
+      "time": 1771331351266,
+      "symbol": "LAUSDT",
+      "action": "OPEN",
+      "entryPrice": 0.2047,
+      "exitPrice": 0,
+      "pnl": "0",
+      "rounds": 0,
+      "leverage": 2,
+      "fundingRate": "-0.3290"
+    },
     {
       "time": 1771331055290,
       "symbol": "JTOUSDT",
