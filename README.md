@@ -1,0 +1,1 @@
+# 🍟 Crypto Funding Rate Dashboard
