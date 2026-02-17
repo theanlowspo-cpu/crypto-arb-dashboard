@@ -1,19 +1,19 @@
 {
-  "lastUpdate": 1771334651885,
-  "totalProfit": -13.957600000000001,
-  "tradeCount": 8,
+  "lastUpdate": 1771334951845,
+  "totalProfit": -18.955280000000002,
+  "tradeCount": 9,
   "maxPositions": 3,
   "winRate": 0,
-  "balance": 45.28242839,
+  "balance": 45.54654078,
   "positions": [
     {
       "symbol": "ORCAUSDT",
       "entryPrice": 1.156,
-      "markPrice": "1.15400000",
+      "markPrice": "1.16273963",
       "qty": 86.5,
       "leverage": 2,
-      "fundingRate": "-0.5972",
-      "unrealizedPnl": "-0.17300000",
+      "fundingRate": "-0.6237",
+      "unrealizedPnl": "0.58297799",
       "settlementsCollected": 0,
       "targetRounds": 3,
       "openTime": 1771321883000
@@ -21,17 +21,37 @@
     {
       "symbol": "LAUSDT",
       "entryPrice": 0.2047,
-      "markPrice": "0.20384179",
+      "markPrice": "0.20320000",
       "qty": 488.7,
       "leverage": 2,
-      "fundingRate": "-0.3222",
-      "unrealizedPnl": "-0.41940722",
+      "fundingRate": "-0.3226",
+      "unrealizedPnl": "-0.73305000",
       "settlementsCollected": 0,
       "targetRounds": 3,
       "openTime": 1771331351266
     }
   ],
   "history": [
+    {
+      "time": 1771334951777,
+      "symbol": "BREVUSDT",
+      "action": "STOP_LOSS",
+      "entryPrice": 0.1396,
+      "exitPrice": 0.13262,
+      "pnl": "-5.00",
+      "rounds": 0
+    },
+    {
+      "time": 1771334951710,
+      "symbol": "BREVUSDT",
+      "action": "OPEN",
+      "entryPrice": 0.1396,
+      "exitPrice": 0,
+      "pnl": "0",
+      "rounds": 0,
+      "leverage": 2,
+      "fundingRate": "-0.3038"
+    },
     {
       "time": 1771333451598,
       "symbol": "AXSUSDT",
