@@ -1,47 +1,115 @@
 {
-  "lastUpdate": 1771330528287,
-  "totalProfit": 0,
+  "lastUpdate": 1771330828361,
+  "totalProfit": -5.976317999999999,
   "tradeCount": 4,
   "maxPositions": 3,
-  "winRate": null,
-  "balance": 0.80787979,
+  "winRate": 0,
+  "balance": 96.13205764,
   "positions": [
-    {
-      "symbol": "RIVERUSDT",
-      "entryPrice": 12.052,
-      "markPrice": "11.85251340",
-      "qty": 8.2,
-      "leverage": 2,
-      "fundingRate": "-1.0181",
-      "unrealizedPnl": "-1.63579012",
-      "settlementsCollected": 0,
-      "targetRounds": 3,
-      "openTime": 1771321791768
-    },
     {
       "symbol": "ORCAUSDT",
       "entryPrice": 1.156,
-      "markPrice": "1.17780528",
+      "markPrice": "1.17900000",
       "qty": 86.5,
       "leverage": 2,
-      "fundingRate": "-0.7965",
-      "unrealizedPnl": "1.88615672",
+      "fundingRate": "-0.7363",
+      "unrealizedPnl": "1.98950000",
       "settlementsCollected": 0,
       "targetRounds": 3,
       "openTime": 1771322083917
-    },
-    {
-      "symbol": "OGNUSDT",
-      "entryPrice": 0.0257,
-      "markPrice": "0.02534475",
-      "qty": 3906,
-      "leverage": 2,
-      "fundingRate": "-0.4664",
-      "unrealizedPnl": "-1.38760650",
-      "settlementsCollected": 0,
-      "targetRounds": 3,
-      "openTime": 1771327484413
     }
   ],
-  "history": []
+  "history": [
+    {
+      "time": 1771330828299,
+      "symbol": "OGNUSDT",
+      "action": "STOP_LOSS",
+      "entryPrice": 0.0257,
+      "exitPrice": 0.024929,
+      "pnl": "-3.01",
+      "rounds": 0
+    },
+    {
+      "time": 1771330828294,
+      "symbol": "RIVERUSDT",
+      "action": "STOP_LOSS",
+      "entryPrice": 12.052,
+      "exitPrice": 11.690439999999999,
+      "pnl": "-2.96",
+      "rounds": 0
+    },
+    {
+      "time": 1771330755122,
+      "symbol": "JTOUSDT",
+      "action": "OPEN",
+      "entryPrice": 0.344,
+      "exitPrice": 0,
+      "pnl": "0",
+      "rounds": 0,
+      "leverage": 2,
+      "fundingRate": "-2.0000"
+    },
+    {
+      "time": 1771330754922,
+      "symbol": "RIVERUSDT",
+      "action": "STOP_LOSS",
+      "entryPrice": 12.052,
+      "exitPrice": 11.690439999999999,
+      "pnl": "-2.96",
+      "rounds": 0
+    },
+    {
+      "time": 1771325084000,
+      "symbol": "OGNUSDT",
+      "action": "OPEN",
+      "entryPrice": 0.0264,
+      "exitPrice": 0,
+      "pnl": "0",
+      "rounds": 0,
+      "leverage": 2,
+      "fundingRate": "-0.6012"
+    },
+    {
+      "time": 1771325084000,
+      "symbol": "OGNUSDT",
+      "action": "STOP_LOSS",
+      "entryPrice": 0.0264,
+      "exitPrice": 0.0256,
+      "pnl": "-3.01",
+      "rounds": 0
+    },
+    {
+      "time": 1771325084000,
+      "symbol": "OGNUSDT",
+      "action": "OPEN",
+      "entryPrice": 0.0257,
+      "exitPrice": 0,
+      "pnl": "0",
+      "rounds": 0,
+      "leverage": 2,
+      "fundingRate": "-0.5528"
+    },
+    {
+      "time": 1771321883000,
+      "symbol": "ORCAUSDT",
+      "action": "OPEN",
+      "entryPrice": 1.156,
+      "exitPrice": 0,
+      "pnl": "0",
+      "rounds": 0,
+      "leverage": 2,
+      "fundingRate": "-0.7522"
+    },
+    {
+      "time": 1771321791768,
+      "symbol": "RIVERUSDT",
+      "action": "OPEN",
+      "entryPrice": 12.052,
+      "exitPrice": 0,
+      "pnl": "0",
+      "rounds": 0,
+      "leverage": 2,
+      "fundingRate": "-0.8691"
+    }
+  ]
 }
