@@ -267,9 +267,9 @@ body {
       <div class="value" id="balance">$0.00</div>
     </div>
     <div class="card">
-      <div class="emoji">📈</div>
-      <div class="label">未實現盈虧</div>
-      <div class="value" id="unrealizedPnl">$0.00</div>
+      <div class="emoji">📉</div>
+      <div class="label">本金損益率</div>
+      <div class="value" id="returnRate">--%</div>
     </div>
   </div>
 
@@ -393,13 +393,15 @@ function renderHistory(history) {
     const pnl = parseFloat(h.pnl) || 0;
     const pnlClass = pnl >= 0 ? 'profit' : 'loss';
     const icon = h.action === 'STOP_LOSS' ? '🛑' : h.action === 'OPEN' ? '🎯' : '📤';
-    return `<tr>
+    const actionText = h.action === 'STOP_LOSS' ? '止損 ❌' : h.action === 'OPEN' ? '開倉' : '平倉 ✅';
+    const rowStyle = h.action === 'STOP_LOSS' ? 'background:#FFF0F0;' : h.action === 'OPEN' ? 'background:#F0FFF0;' : '';
+    return `<tr style="${rowStyle}">
       <td>${formatTime(h.time)}</td>
       <td><strong>${h.symbol}</strong></td>
-      <td>${icon} ${h.action}</td>
+      <td>${icon} ${actionText}</td>
       <td>$${parseFloat(h.entryPrice || 0).toFixed(4)}</td>
-      <td>$${parseFloat(h.exitPrice || 0).toFixed(4)}</td>
-      <td class="${pnlClass}"><strong>${formatUSD(pnl)}</strong></td>
+      <td>${h.action === 'OPEN' ? '--' : '$' + parseFloat(h.exitPrice || 0).toFixed(4)}</td>
+      <td class="${pnlClass}"><strong>${h.action === 'OPEN' ? '--' : formatUSD(pnl)}</strong></td>
       <td>${h.rounds || '--'}</td>
     </tr>`;
   }).join('');
@@ -417,12 +419,16 @@ async function loadData() {
 
     document.getElementById('posCount').textContent = `${(data.positions || []).length}/${data.maxPositions || 3}`;
     document.getElementById('tradeCount').textContent = data.tradeCount || 0;
-    document.getElementById('winRate').textContent = data.winRate ? data.winRate + '%' : '--%';
+    document.getElementById('winRate').textContent = data.winRate !== null ? data.winRate + '%' : '0%';
+    document.getElementById('winRate').className = 'value ' + ((data.winRate || 0) >= 50 ? 'profit' : 'loss');
     document.getElementById('balance').textContent = '$' + (parseFloat(data.balance) || 0).toFixed(2);
 
-    const unrealized = (data.positions || []).reduce((s, p) => s + (parseFloat(p.unrealizedPnl) || 0), 0);
-    document.getElementById('unrealizedPnl').textContent = formatUSD(unrealized);
-    document.getElementById('unrealizedPnl').className = 'value ' + (unrealized >= 0 ? 'profit' : 'loss');
+    // 本金損益率（初始本金 $150）
+    const initialCapital = data.initialCapital || 150;
+    const totalPnlVal = parseFloat(data.totalProfit) || 0;
+    const returnPct = ((totalPnlVal / initialCapital) * 100).toFixed(2);
+    document.getElementById('returnRate').textContent = (returnPct >= 0 ? '+' : '') + returnPct + '%';
+    document.getElementById('returnRate').className = 'value ' + (returnPct >= 0 ? 'profit' : 'loss');
 
     document.getElementById('lastUpdate').textContent = formatTime(data.lastUpdate);
     document.getElementById('nextSettlement').textContent = getNextSettlement();
