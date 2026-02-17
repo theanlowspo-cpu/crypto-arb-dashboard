@@ -1,19 +1,20 @@
 {
-  "lastUpdate": 1771336452251,
-  "totalProfit": -18.955280000000002,
-  "tradeCount": 9,
+  "lastUpdate": 1771336918383,
+  "totalProfit": -23.954154850000002,
+  "tradeCount": 10,
   "maxPositions": 3,
+  "initialCapital": 150,
   "winRate": 0,
-  "balance": 44.96740978,
+  "balance": 45.32314558,
   "positions": [
     {
       "symbol": "ORCAUSDT",
       "entryPrice": 1.156,
-      "markPrice": "1.14900000",
+      "markPrice": "1.14600000",
       "qty": 86.5,
       "leverage": 2,
-      "fundingRate": "-0.6990",
-      "unrealizedPnl": "-0.60550000",
+      "fundingRate": "-0.6721",
+      "unrealizedPnl": "-0.86500000",
       "settlementsCollected": 0,
       "targetRounds": 3,
       "openTime": 1771321883000
@@ -21,17 +22,37 @@
     {
       "symbol": "LAUSDT",
       "entryPrice": 0.2047,
-      "markPrice": "0.20300000",
+      "markPrice": "0.20281588",
       "qty": 488.7,
       "leverage": 2,
-      "fundingRate": "-0.3224",
-      "unrealizedPnl": "-0.83079000",
+      "fundingRate": "-0.3212",
+      "unrealizedPnl": "-0.92076944",
       "settlementsCollected": 0,
       "targetRounds": 3,
       "openTime": 1771331351266
     }
   ],
   "history": [
+    {
+      "time": 1771336918322,
+      "symbol": "STABLEUSDT",
+      "action": "STOP_LOSS",
+      "entryPrice": 0.027641,
+      "exitPrice": 0.026258949999999996,
+      "pnl": "-5.00",
+      "rounds": 0
+    },
+    {
+      "time": 1771336618117,
+      "symbol": "STABLEUSDT",
+      "action": "OPEN",
+      "entryPrice": 0.027641,
+      "exitPrice": 0,
+      "pnl": "0",
+      "rounds": 0,
+      "leverage": 2,
+      "fundingRate": "-0.2848"
+    },
     {
       "time": 1771334951777,
       "symbol": "BREVUSDT",
