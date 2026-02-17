@@ -1,19 +1,19 @@
 {
-  "lastUpdate": 1771331055345,
-  "totalProfit": -8.969117999999998,
-  "tradeCount": 5,
+  "lastUpdate": 1771331128346,
+  "totalProfit": -5.976317999999999,
+  "tradeCount": 4,
   "maxPositions": 3,
   "winRate": 0,
-  "balance": 96.04555764,
+  "balance": 95.91580764,
   "positions": [
     {
       "symbol": "ORCAUSDT",
       "entryPrice": 1.156,
-      "markPrice": "1.17900000",
+      "markPrice": "1.17400000",
       "qty": 86.5,
       "leverage": 2,
       "fundingRate": "-0.7083",
-      "unrealizedPnl": "1.98950000",
+      "unrealizedPnl": "1.55700000",
       "settlementsCollected": 0,
       "targetRounds": 3,
       "openTime": 1771322083917
