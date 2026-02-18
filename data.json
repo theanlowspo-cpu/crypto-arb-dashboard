@@ -1,10 +1,10 @@
 {
-  "lastUpdate": "2026-02-18T08:31:30.289Z",
+  "lastUpdate": "2026-02-18T08:36:34.146Z",
   "strategy": "Delta Neutral 多幣種輪動 v2.0",
   "version": "2.0",
-  "btcPrice": 68240.2,
+  "btcPrice": 68160.36844203,
   "status": "open",
-  "statusText": "🟢 2 個持倉運行中",
+  "statusText": "🟢 3 個持倉運行中",
   "nextFunding": 1771430400000,
   "positions": [
     {
@@ -12,12 +12,12 @@
       "spotQty": 178,
       "futuresQty": 178,
       "entryPrice": 0.3927,
-      "currentRate": 0.00005985,
-      "annualizedRate": "6.6%",
-      "unrealizedPnl": -0.40653242,
+      "currentRate": 0.00005778,
+      "annualizedRate": "6.3%",
+      "unrealizedPnl": -0.19067182,
       "fundingEarned": 0.0059457450359999995,
       "fundingCount": 1,
-      "holdHours": "3.9",
+      "holdHours": "4.0",
       "openTime": 1771389380662
     },
     {
@@ -27,18 +27,31 @@
       "entryPrice": 0.252,
       "currentRate": 0.0001,
       "annualizedRate": "11.0%",
-      "unrealizedPnl": -0.8328,
+      "unrealizedPnl": -0.64489811,
       "fundingEarned": 0.006995520000000001,
       "fundingCount": 1,
-      "holdHours": "3.4",
+      "holdHours": "3.5",
       "openTime": 1771391187752
+    },
+    {
+      "symbol": "DYDXUSDT",
+      "spotQty": 639.6,
+      "futuresQty": 639.6,
+      "entryPrice": 0.10949999999999999,
+      "currentRate": 0.0001,
+      "annualizedRate": "11.0%",
+      "unrealizedPnl": -0.27794457,
+      "fundingEarned": 0,
+      "fundingCount": 0,
+      "holdHours": "0.0",
+      "openTime": 1771403790574
     }
   ],
   "performance": {
     "totalFundingEarned": 0.0006160383450000001,
-    "totalTrades": 3,
-    "totalFees": 0.41785245,
-    "netProfit": -0.417236411655,
+    "totalTrades": 4,
+    "totalFees": 0.52290675,
+    "netProfit": -0.522290711655,
     "closedTrades": [
       {
         "symbol": "ZENUSDT",
@@ -55,9 +68,9 @@
     ]
   },
   "account": {
-    "futuresBalance": "275.53",
-    "futuresAvailable": "133.51",
-    "spotUsdt": "74.00"
+    "futuresBalance": "275.49",
+    "futuresAvailable": "64.01",
+    "spotUsdt": "3.96"
   },
   "rateHistory": [
     {
