@@ -3,454 +3,206 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>🍟 開心套利小廚房</title>
+<title>⚖️ Delta Neutral 套利</title>
 <style>
 * { margin: 0; padding: 0; box-sizing: border-box; }
-body {
-  font-family: 'Segoe UI', Arial, sans-serif;
-  background: linear-gradient(135deg, #FFF3CD 0%, #FFECB3 50%, #FFE082 100%);
-  min-height: 100vh;
-  color: #333;
-}
-
-/* 頂部橫幅 */
-.header {
-  background: linear-gradient(90deg, #DA291C, #FF5722, #DA291C);
-  color: white;
-  padding: 20px;
-  text-align: center;
-  box-shadow: 0 4px 15px rgba(218,41,28,0.3);
-  position: relative;
-  overflow: hidden;
-}
-.header h1 { font-size: 2em; text-shadow: 2px 2px 4px rgba(0,0,0,0.3); }
-.header .subtitle { font-size: 1.1em; opacity: 0.9; margin-top: 5px; }
-.header .mascot {
-  position: absolute; right: 20px; top: 50%; transform: translateY(-50%);
-  width: 80px; height: 80px; border-radius: 50%; border: 3px solid #FFC107;
-  object-fit: cover;
-}
-.header .mascot-left {
-  position: absolute; left: 20px; top: 50%; transform: translateY(-50%);
-  width: 80px; height: 80px; border-radius: 50%; border: 3px solid #FFC107;
-  object-fit: cover;
-}
-
-/* 狀態列 */
-.status-bar {
-  background: #FFC107;
-  padding: 10px 20px;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  font-weight: bold;
-  color: #333;
-  flex-wrap: wrap;
-  gap: 10px;
-}
-.status-item { display: flex; align-items: center; gap: 5px; }
-.status-dot { width: 12px; height: 12px; border-radius: 50%; display: inline-block; }
-.dot-green { background: #4CAF50; box-shadow: 0 0 8px #4CAF50; }
-.dot-red { background: #f44336; box-shadow: 0 0 8px #f44336; }
-
-/* 主內容 */
-.container { max-width: 1200px; margin: 0 auto; padding: 20px; }
-
-/* 總覽卡片 */
-.summary-cards {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-  gap: 15px;
-  margin-bottom: 20px;
-}
-.card {
-  background: white;
-  border-radius: 16px;
-  padding: 20px;
-  box-shadow: 0 4px 15px rgba(0,0,0,0.08);
-  text-align: center;
-  border-top: 4px solid #FFC107;
-  transition: transform 0.2s;
-}
-.card:hover { transform: translateY(-3px); }
-.card .emoji { font-size: 2em; }
-.card .label { color: #888; font-size: 0.85em; margin-top: 5px; }
-.card .value { font-size: 1.8em; font-weight: bold; margin-top: 5px; }
-.card .value.profit { color: #4CAF50; }
-.card .value.loss { color: #f44336; }
-
-/* 持倉區 */
-.section-title {
-  font-size: 1.4em;
-  color: #DA291C;
-  margin: 25px 0 15px;
-  display: flex;
-  align-items: center;
-  gap: 10px;
-}
-
-.positions-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-  gap: 15px;
-  margin-bottom: 20px;
-}
-.position-card {
-  background: white;
-  border-radius: 16px;
-  padding: 20px;
-  box-shadow: 0 4px 15px rgba(0,0,0,0.08);
-  border-left: 5px solid #FFC107;
-}
-.position-card .symbol {
-  font-size: 1.3em;
-  font-weight: bold;
-  color: #DA291C;
-}
-.position-card .details {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 8px;
-  margin-top: 12px;
-  font-size: 0.9em;
-}
-.position-card .detail-label { color: #888; }
-.position-card .detail-value { font-weight: bold; text-align: right; }
-.position-card .pnl-bar {
-  margin-top: 12px;
-  height: 8px;
-  background: #eee;
-  border-radius: 4px;
-  overflow: hidden;
-}
-.position-card .pnl-fill {
-  height: 100%;
-  border-radius: 4px;
-  transition: width 0.5s;
-}
-.pnl-positive { background: linear-gradient(90deg, #4CAF50, #8BC34A); }
-.pnl-negative { background: linear-gradient(90deg, #f44336, #FF5722); }
-
-/* 歷史交易 */
-.history-table {
-  width: 100%;
-  background: white;
-  border-radius: 16px;
-  overflow: hidden;
-  box-shadow: 0 4px 15px rgba(0,0,0,0.08);
-  margin-bottom: 20px;
-}
-.history-table table { width: 100%; border-collapse: collapse; }
-.history-table th {
-  background: #DA291C;
-  color: white;
-  padding: 12px 15px;
-  text-align: left;
-  font-size: 0.9em;
-}
-.history-table td {
-  padding: 10px 15px;
-  border-bottom: 1px solid #f0f0f0;
-  font-size: 0.85em;
-}
-.history-table tr:hover { background: #FFF8E1; }
-
-/* 可愛裝飾圖 */
-.cute-section {
-  text-align: center;
-  padding: 20px;
-}
-.cute-section img {
-  width: 120px;
-  height: 120px;
-  border-radius: 50%;
-  border: 4px solid #FFC107;
-  margin: 0 10px;
-  box-shadow: 0 4px 15px rgba(255,193,7,0.3);
-}
-
-/* 費率排行 */
-.rate-list {
-  background: white;
-  border-radius: 16px;
-  padding: 20px;
-  box-shadow: 0 4px 15px rgba(0,0,0,0.08);
-  margin-bottom: 20px;
-}
-.rate-item {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 8px 0;
-  border-bottom: 1px solid #f5f5f5;
-}
-.rate-item:last-child { border-bottom: none; }
-.rate-badge {
-  background: #FFC107;
-  color: #333;
-  padding: 2px 8px;
-  border-radius: 12px;
-  font-size: 0.8em;
-  font-weight: bold;
-}
-
-/* Footer */
-.footer {
-  text-align: center;
-  padding: 20px;
-  color: #888;
-  font-size: 0.85em;
-}
-.footer .love { color: #DA291C; }
-
-/* 動畫 */
-@keyframes float {
-  0%, 100% { transform: translateY(0); }
-  50% { transform: translateY(-10px); }
-}
-.floating { animation: float 3s ease-in-out infinite; }
-
-/* 手機適配 */
-@media (max-width: 600px) {
-  .header h1 { font-size: 1.4em; }
-  .header .mascot, .header .mascot-left { display: none; }
-  .summary-cards { grid-template-columns: repeat(2, 1fr); }
-  .positions-grid { grid-template-columns: 1fr; }
-  .card .value { font-size: 1.4em; }
-}
+body { background: #0a0a0a; color: #e0e0e0; font-family: -apple-system, 'Segoe UI', sans-serif; padding: 12px; max-width: 600px; margin: 0 auto; }
+.header { text-align: center; padding: 16px 0; }
+.header h1 { font-size: 1.4em; color: #00d4aa; }
+.header .subtitle { font-size: 0.8em; color: #888; margin-top: 4px; }
+.status-bar { display: flex; justify-content: space-between; align-items: center; background: #141414; border-radius: 10px; padding: 10px 14px; margin: 10px 0; border: 1px solid #222; }
+.status-dot { width: 10px; height: 10px; border-radius: 50%; display: inline-block; margin-right: 6px; }
+.status-dot.open { background: #00d4aa; box-shadow: 0 0 8px #00d4aa; }
+.status-dot.waiting { background: #f0a030; box-shadow: 0 0 8px #f0a030; }
+.status-text { font-size: 0.9em; }
+.update-time { font-size: 0.75em; color: #666; }
+.cards { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; margin: 10px 0; }
+.card { background: #141414; border-radius: 10px; padding: 12px; border: 1px solid #222; text-align: center; }
+.card .label { font-size: 0.7em; color: #888; margin-bottom: 4px; }
+.card .value { font-size: 1.2em; font-weight: 700; }
+.card .sub { font-size: 0.7em; color: #666; margin-top: 2px; }
+.positive { color: #00d4aa; }
+.negative { color: #ff4466; }
+.neutral { color: #f0a030; }
+.section { background: #141414; border-radius: 10px; padding: 14px; margin: 10px 0; border: 1px solid #222; }
+.section h3 { font-size: 0.85em; color: #00d4aa; margin-bottom: 10px; }
+.row { display: flex; justify-content: space-between; padding: 5px 0; border-bottom: 1px solid #1a1a1a; font-size: 0.82em; }
+.row:last-child { border-bottom: none; }
+.row .k { color: #888; }
+.row .v { font-weight: 600; }
+.rate-bar { display: flex; align-items: center; gap: 4px; margin: 3px 0; }
+.rate-bar .bar { height: 14px; border-radius: 3px; min-width: 2px; }
+.rate-bar .bar.pos { background: #00d4aa; }
+.rate-bar .bar.neg { background: #ff4466; }
+.rate-bar .lbl { font-size: 0.65em; color: #888; min-width: 35px; }
+.rate-bar .val { font-size: 0.7em; min-width: 50px; text-align: right; }
+.countdown { font-size: 1.1em; text-align: center; color: #f0a030; font-weight: 700; padding: 8px; }
+.footer { text-align: center; font-size: 0.65em; color: #444; padding: 16px 0; }
 </style>
 </head>
 <body>
 
 <div class="header">
-  <img src="img/burger_thief1.jpg" class="mascot-left" alt="漢堡神偷">
-  <h1>🍟 開心套利小廚房 🍔</h1>
-  <div class="subtitle">自動幫你賺零用錢的快樂機器 💰</div>
-  <img src="img/fries1.jpg" class="mascot" alt="薯條寶寶">
+  <h1>⚖️ Delta Neutral 套利</h1>
+  <div class="subtitle">現貨買入 + 合約做空 = 純吃正費率</div>
 </div>
 
 <div class="status-bar">
-  <div class="status-item">
-    <span class="status-dot dot-green" id="statusDot"></span>
-    <span id="statusText">系統運行中</span>
+  <div>
+    <span class="status-dot waiting" id="statusDot"></span>
+    <span class="status-text" id="statusText">載入中...</span>
   </div>
-  <div class="status-item">🕐 更新: <span id="lastUpdate">載入中...</span></div>
-  <div class="status-item">⏱️ 下次結算: <span id="nextSettlement">計算中...</span></div>
+  <div class="update-time" id="updateTime">--</div>
 </div>
 
-<div class="container">
-  <!-- 總覽卡片 -->
-  <div class="summary-cards">
-    <div class="card">
-      <div class="emoji">💰</div>
-      <div class="label">累計盈虧</div>
-      <div class="value" id="totalPnl">$0.00</div>
-    </div>
-    <div class="card">
-      <div class="emoji">📊</div>
-      <div class="label">當前持倉</div>
-      <div class="value" id="posCount">0/3</div>
-    </div>
-    <div class="card">
-      <div class="emoji">🎯</div>
-      <div class="label">交易次數</div>
-      <div class="value" id="tradeCount">0</div>
-    </div>
-    <div class="card">
-      <div class="emoji">🏆</div>
-      <div class="label">勝率</div>
-      <div class="value" id="winRate">--%</div>
-    </div>
-    <div class="card">
-      <div class="emoji">💵</div>
-      <div class="label">帳戶餘額</div>
-      <div class="value" id="balance">$0.00</div>
-    </div>
-    <div class="card">
-      <div class="emoji">📉</div>
-      <div class="label">本金損益率</div>
-      <div class="value" id="returnRate">--%</div>
-    </div>
-  </div>
+<div class="countdown" id="countdown">⏱️ 下次結算: 計算中...</div>
 
-  <!-- 當前持倉 -->
-  <div class="section-title">🍟 當前持倉</div>
-  <div class="positions-grid" id="positionsGrid">
-    <div class="position-card"><p style="text-align:center;color:#888;">載入中...</p></div>
+<div class="cards">
+  <div class="card">
+    <div class="label">BTC 價格</div>
+    <div class="value" id="btcPrice">--</div>
   </div>
+  <div class="card">
+    <div class="label">當前費率</div>
+    <div class="value" id="currentRate">--</div>
+    <div class="sub" id="annualRate">年化 --%</div>
+  </div>
+  <div class="card">
+    <div class="label">淨曝險</div>
+    <div class="value" id="netExposure">$0</div>
+    <div class="sub">越接近 $0 越好</div>
+  </div>
+  <div class="card">
+    <div class="label">費率收益</div>
+    <div class="value positive" id="fundingEarned">$0.00</div>
+    <div class="sub" id="fundingCount">0 次結算</div>
+  </div>
+</div>
 
-  <!-- 可愛裝飾 -->
-  <div class="cute-section">
-    <img src="img/hamster1.jpg" class="floating" alt="倉鼠寶寶" title="倉鼠寶寶">
-    <img src="img/milkshake1.jpg" class="floating" style="animation-delay:0.5s" alt="奶昔大哥" title="奶昔大哥">
-    <img src="img/burger_thief2.jpg" class="floating" style="animation-delay:1s" alt="漢堡神偷" title="漢堡神偷">
-    <img src="img/rocket_cat1.jpg" class="floating" style="animation-delay:1.5s" alt="火箭貓" title="火箭貓">
-    <img src="img/fries2.jpg" class="floating" style="animation-delay:2s" alt="薯條寶寶" title="薯條寶寶">
-  </div>
+<div class="section">
+  <h3>📊 持倉明細</h3>
+  <div class="row"><span class="k">現貨 BTC</span><span class="v" id="spotQty">--</span></div>
+  <div class="row"><span class="k">現貨價值</span><span class="v" id="spotValue">--</span></div>
+  <div class="row"><span class="k">合約空單</span><span class="v" id="futuresQty">--</span></div>
+  <div class="row"><span class="k">合約入場價</span><span class="v" id="futuresEntry">--</span></div>
+  <div class="row"><span class="k">合約未實現盈虧</span><span class="v" id="futuresPnl">--</span></div>
+</div>
 
-  <!-- 交易歷史 -->
-  <div class="section-title">📋 交易歷史</div>
-  <div class="history-table">
-    <table>
-      <thead>
-        <tr>
-          <th>時間</th>
-          <th>幣種</th>
-          <th>動作</th>
-          <th>入場價</th>
-          <th>出場價</th>
-          <th>盈虧</th>
-          <th>費率輪數</th>
-        </tr>
-      </thead>
-      <tbody id="historyBody">
-        <tr><td colspan="7" style="text-align:center;color:#888;">載入中...</td></tr>
-      </tbody>
-    </table>
-  </div>
+<div class="section">
+  <h3>💰 帳戶</h3>
+  <div class="row"><span class="k">合約餘額</span><span class="v" id="futBal">--</span></div>
+  <div class="row"><span class="k">現貨 USDT</span><span class="v" id="spotUsdt">--</span></div>
+  <div class="row"><span class="k">正費率比例 (近20次)</span><span class="v" id="posRatio">--</span></div>
+  <div class="row"><span class="k">平均費率 (近20次)</span><span class="v" id="avgRate">--</span></div>
+</div>
 
-  <div class="footer">
-    <div class="cute-section" style="padding:10px">
-      <img src="img/milkshake2.jpg" class="floating" style="width:80px;height:80px;animation-delay:0.3s" alt="奶昔" title="奶昔大哥">
-      <img src="img/hamster2.jpg" class="floating" style="width:80px;height:80px;animation-delay:0.8s" alt="倉鼠" title="倉鼠寶寶">
-      <img src="img/rocket_cat2.jpg" class="floating" style="width:80px;height:80px;animation-delay:1.3s" alt="火箭貓" title="火箭貓">
-    </div>
-    <p>🍔 用愛與演算法製作 <span class="love">❤️</span> 給最可愛的寶貝 🍟</p>
-    <p style="margin-top:5px;">自動更新每 5 分鐘 | 資料僅供參考</p>
-    <p style="margin-top:5px;font-size:0.75em;">🍟 Ba da ba ba ba~ I'm lovin' it 💕</p>
-  </div>
+<div class="section">
+  <h3>📈 近期費率</h3>
+  <div id="rateChart"></div>
+</div>
+
+<div class="footer">
+  Delta Neutral Bot v1.0 | 數據每 5 分鐘更新<br>
+  ⚠️ 僅供參考，不構成投資建議
 </div>
 
 <script>
-const DATA_URL = 'data.json';
-const REFRESH_MS = 60 * 1000; // 每分鐘刷新
+const DATA_URL = 'data.json?t=' + Date.now();
 
-function formatTime(ts) {
-  if (!ts) return '--';
-  const d = new Date(ts);
-  return d.toLocaleString('zh-TW', { timeZone: 'Asia/Taipei', hour12: false });
-}
-
-function formatUSD(n) {
-  const v = parseFloat(n) || 0;
-  return (v >= 0 ? '+' : '') + '$' + v.toFixed(2);
-}
-
-function getNextSettlement() {
-  const now = new Date();
-  const hours = [0, 8, 16];
-  for (const h of hours) {
-    const target = new Date(now);
-    target.setUTCHours(h, 0, 0, 0);
-    if (target > now) {
-      const diff = Math.floor((target - now) / 60000);
-      return `${Math.floor(diff/60)}h ${diff%60}m`;
-    }
-  }
-  const tomorrow = new Date(now);
-  tomorrow.setUTCDate(tomorrow.getUTCDate() + 1);
-  tomorrow.setUTCHours(0, 0, 0, 0);
-  const diff = Math.floor((tomorrow - now) / 60000);
-  return `${Math.floor(diff/60)}h ${diff%60}m`;
-}
-
-function renderPositions(positions) {
-  const grid = document.getElementById('positionsGrid');
-  if (!positions || positions.length === 0) {
-    grid.innerHTML = '<div class="position-card"><p style="text-align:center;color:#888;">🍟 目前沒有持倉，等待機會中...</p></div>';
-    return;
-  }
-  grid.innerHTML = positions.map(p => {
-    const pnl = parseFloat(p.unrealizedPnl) || 0;
-    const pnlClass = pnl >= 0 ? 'profit' : 'loss';
-    const barClass = pnl >= 0 ? 'pnl-positive' : 'pnl-negative';
-    const barWidth = Math.min(Math.abs(pnl) / 5 * 100, 100);
-    return `
-      <div class="position-card">
-        <div class="symbol">${p.symbol} ${pnl >= 0 ? '🟢' : '🔴'}</div>
-        <div class="details">
-          <span class="detail-label">入場價</span><span class="detail-value">$${parseFloat(p.entryPrice).toFixed(4)}</span>
-          <span class="detail-label">當前價</span><span class="detail-value">$${parseFloat(p.markPrice || 0).toFixed(4)}</span>
-          <span class="detail-label">數量</span><span class="detail-value">${p.qty}</span>
-          <span class="detail-label">槓桿</span><span class="detail-value">${p.leverage}x</span>
-          <span class="detail-label">費率</span><span class="detail-value">${parseFloat(p.fundingRate).toFixed(4)}%</span>
-          <span class="detail-label">盈虧</span><span class="detail-value ${pnlClass}">${formatUSD(pnl)}</span>
-          <span class="detail-label">結算輪數</span><span class="detail-value">${p.settlementsCollected}/${p.targetRounds || 3}</span>
-          <span class="detail-label">開倉時間</span><span class="detail-value">${formatTime(p.openTime)}</span>
-        </div>
-        <div class="pnl-bar"><div class="pnl-fill ${barClass}" style="width:${barWidth}%"></div></div>
-      </div>`;
-  }).join('');
-}
-
-function renderHistory(history) {
-  const tbody = document.getElementById('historyBody');
-  if (!history || history.length === 0) {
-    tbody.innerHTML = '<tr><td colspan="7" style="text-align:center;color:#888;">🍔 還沒有交易紀錄</td></tr>';
-    return;
-  }
-  tbody.innerHTML = history.slice(0, 50).map(h => {
-    const pnl = parseFloat(h.pnl) || 0;
-    const pnlClass = pnl >= 0 ? 'profit' : 'loss';
-    const icon = h.action === 'STOP_LOSS' ? '🛑' : h.action === 'OPEN' ? '🎯' : '📤';
-    const actionText = h.action === 'STOP_LOSS' ? '止損 ❌' : h.action === 'OPEN' ? '開倉' : '平倉 ✅';
-    const rowStyle = h.action === 'STOP_LOSS' ? 'background:#FFF0F0;' : h.action === 'OPEN' ? 'background:#F0FFF0;' : '';
-    return `<tr style="${rowStyle}">
-      <td>${formatTime(h.time)}</td>
-      <td><strong>${h.symbol}</strong></td>
-      <td>${icon} ${actionText}</td>
-      <td>$${parseFloat(h.entryPrice || 0).toFixed(4)}</td>
-      <td>${h.action === 'OPEN' ? '--' : '$' + parseFloat(h.exitPrice || 0).toFixed(4)}</td>
-      <td class="${pnlClass}"><strong>${h.action === 'OPEN' ? '--' : formatUSD(pnl)}</strong></td>
-      <td>${h.rounds || '--'}</td>
-    </tr>`;
-  }).join('');
-}
-
-async function loadData() {
+async function load() {
   try {
-    const res = await fetch(DATA_URL + '?t=' + Date.now());
-    const data = await res.json();
-
-    // 總覽
-    const totalPnl = parseFloat(data.totalProfit) || 0;
-    document.getElementById('totalPnl').textContent = formatUSD(totalPnl);
-    document.getElementById('totalPnl').className = 'value ' + (totalPnl >= 0 ? 'profit' : 'loss');
-
-    document.getElementById('posCount').textContent = `${(data.positions || []).length}/${data.maxPositions || 3}`;
-    document.getElementById('tradeCount').textContent = data.tradeCount || 0;
-    document.getElementById('winRate').textContent = data.winRate !== null ? data.winRate + '%' : '0%';
-    document.getElementById('winRate').className = 'value ' + ((data.winRate || 0) >= 50 ? 'profit' : 'loss');
-    document.getElementById('balance').textContent = '$' + (parseFloat(data.balance) || 0).toFixed(2);
-
-    // 本金損益率（初始本金 $150）
-    const initialCapital = data.initialCapital || 150;
-    const totalPnlVal = parseFloat(data.totalProfit) || 0;
-    const returnPct = ((totalPnlVal / initialCapital) * 100).toFixed(2);
-    document.getElementById('returnRate').textContent = (returnPct >= 0 ? '+' : '') + returnPct + '%';
-    document.getElementById('returnRate').className = 'value ' + (returnPct >= 0 ? 'profit' : 'loss');
-
-    document.getElementById('lastUpdate').textContent = formatTime(data.lastUpdate);
-    document.getElementById('nextSettlement').textContent = getNextSettlement();
-
-    // 系統狀態
-    const age = Date.now() - (data.lastUpdate || 0);
-    const online = age < 10 * 60 * 1000;
-    document.getElementById('statusDot').className = 'status-dot ' + (online ? 'dot-green' : 'dot-red');
-    document.getElementById('statusText').textContent = online ? '系統運行中 🍟' : '系統離線 ⚠️';
-
-    renderPositions(data.positions || []);
-    renderHistory(data.history || []);
-  } catch (e) {
-    console.error('載入失敗:', e);
+    const res = await fetch(DATA_URL);
+    const d = await res.json();
+    render(d);
+  } catch(e) {
+    document.getElementById('statusText').textContent = '❌ 載入失敗';
   }
 }
 
-loadData();
-setInterval(loadData, REFRESH_MS);
-setInterval(() => {
-  document.getElementById('nextSettlement').textContent = getNextSettlement();
-}, 60000);
+function render(d) {
+  // Status
+  const dot = document.getElementById('statusDot');
+  const stxt = document.getElementById('statusText');
+  if (d.status === 'open') {
+    dot.className = 'status-dot open';
+    stxt.textContent = d.statusText;
+  } else {
+    dot.className = 'status-dot waiting';
+    stxt.textContent = d.statusText;
+  }
+
+  // Update time
+  const ut = new Date(d.lastUpdate);
+  document.getElementById('updateTime').textContent = ut.toLocaleString('zh-TW', { timeZone: 'Asia/Taipei' });
+
+  // BTC price
+  document.getElementById('btcPrice').textContent = '$' + Number(d.btcPrice).toLocaleString('en', { maximumFractionDigits: 0 });
+
+  // Rate
+  const rate = d.rates.btc.rate;
+  const rateEl = document.getElementById('currentRate');
+  rateEl.textContent = (rate * 100).toFixed(4) + '%';
+  rateEl.className = 'value ' + (rate >= 0 ? 'positive' : 'negative');
+  document.getElementById('annualRate').textContent = '年化 ' + d.rates.btc.annualized;
+
+  // Countdown
+  const now = Date.now();
+  const next = d.rates.nextFunding;
+  function updateCountdown() {
+    const diff = next - Date.now();
+    if (diff <= 0) { document.getElementById('countdown').textContent = '⏱️ 結算中...'; return; }
+    const h = Math.floor(diff / 3600000);
+    const m = Math.floor((diff % 3600000) / 60000);
+    const s = Math.floor((diff % 60000) / 1000);
+    document.getElementById('countdown').textContent = `⏱️ 下次結算: ${h}h ${m}m ${s}s`;
+  }
+  updateCountdown();
+  setInterval(updateCountdown, 1000);
+
+  // Net exposure
+  const ne = document.getElementById('netExposure');
+  ne.textContent = '$' + d.position.netExposure;
+  ne.className = 'value ' + (Math.abs(parseFloat(d.position.netExposure)) < 5 ? 'positive' : 'neutral');
+
+  // Funding earned
+  document.getElementById('fundingEarned').textContent = '$' + (parseFloat(d.position.futuresPnl) || 0).toFixed(4);
+  document.getElementById('fundingCount').textContent = (d.rateHistory || []).length + ' 次費率紀錄';
+
+  // Position
+  document.getElementById('spotQty').textContent = d.position.spotBtc + ' BTC';
+  document.getElementById('spotValue').textContent = '$' + d.position.spotValue;
+  document.getElementById('futuresQty').textContent = d.position.futuresQty + ' BTC';
+  document.getElementById('futuresEntry').textContent = '$' + Number(d.position.futuresEntry).toLocaleString('en', { maximumFractionDigits: 2 });
+  const pnlEl = document.getElementById('futuresPnl');
+  const pnl = parseFloat(d.position.futuresPnl);
+  pnlEl.textContent = '$' + d.position.futuresPnl;
+  pnlEl.className = 'v ' + (pnl >= 0 ? 'positive' : 'negative');
+
+  // Account
+  document.getElementById('futBal').textContent = '$' + d.account.futuresBalance;
+  document.getElementById('spotUsdt').textContent = '$' + d.account.spotUsdt;
+  document.getElementById('posRatio').textContent = d.rates.positiveRatio;
+  document.getElementById('avgRate').textContent = d.rates.avgRate20;
+
+  // Rate chart
+  const chart = document.getElementById('rateChart');
+  const rates = d.rateHistory || [];
+  const maxAbs = Math.max(...rates.map(r => Math.abs(r.rate)), 0.0001);
+  chart.innerHTML = rates.slice(-15).map(r => {
+    const pct = Math.abs(r.rate) / maxAbs * 100;
+    const cls = r.rate >= 0 ? 'pos' : 'neg';
+    const time = new Date(r.time).toLocaleString('zh-TW', { timeZone: 'Asia/Taipei', month: 'numeric', day: 'numeric', hour: '2-digit', minute: '2-digit' });
+    const color = r.rate >= 0 ? '#00d4aa' : '#ff4466';
+    return `<div class="rate-bar">
+      <span class="lbl">${time}</span>
+      <div class="bar ${cls}" style="width:${Math.max(pct, 3)}%"></div>
+      <span class="val" style="color:${color}">${(r.rate * 100).toFixed(4)}%</span>
+    </div>`;
+  }).join('');
+}
+
+load();
+setInterval(load, 300000);
 </script>
 </body>
 </html>
