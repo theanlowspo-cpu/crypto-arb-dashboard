@@ -1,217 +1,137 @@
 {
-  "lastUpdate": 1771336918383,
-  "totalProfit": -23.954154850000002,
-  "tradeCount": 10,
-  "maxPositions": 3,
-  "initialCapital": 150,
-  "winRate": 0,
-  "balance": 45.32314558,
-  "positions": [
+  "lastUpdate": "2026-02-18T01:37:29.863Z",
+  "strategy": "Delta Neutral 正費率套利",
+  "version": "1.0",
+  "btcPrice": 66951.6,
+  "status": "open",
+  "statusText": "🟢 持倉中",
+  "rates": {
+    "btc": {
+      "rate": 0.00003542,
+      "annualized": "3.88%"
+    },
+    "eth": {
+      "rate": -0.00001202,
+      "annualized": "-1.32%"
+    },
+    "nextFunding": 1771401600000,
+    "avgRate20": "0.0010%",
+    "positiveRatio": "11/20"
+  },
+  "position": {
+    "spotBtc": 0.00207008,
+    "spotValue": "138.60",
+    "futuresQty": -0.002,
+    "futuresEntry": 67291.9,
+    "futuresPnl": "0.6806",
+    "netExposure": "4.69"
+  },
+  "account": {
+    "futuresBalance": "147.28",
+    "futuresAvailable": "14.05",
+    "spotUsdt": "343.25",
+    "spotBtcValue": "138.60"
+  },
+  "rateHistory": [
     {
-      "symbol": "ORCAUSDT",
-      "entryPrice": 1.156,
-      "markPrice": "1.14600000",
-      "qty": 86.5,
-      "leverage": 2,
-      "fundingRate": "-0.6721",
-      "unrealizedPnl": "-0.86500000",
-      "settlementsCollected": 0,
-      "targetRounds": 3,
-      "openTime": 1771321883000
+      "time": "2026-02-11T16:00:00.000Z",
+      "rate": -0.00001169,
+      "annualized": "-1.28"
     },
     {
-      "symbol": "LAUSDT",
-      "entryPrice": 0.2047,
-      "markPrice": "0.20281588",
-      "qty": 488.7,
-      "leverage": 2,
-      "fundingRate": "-0.3212",
-      "unrealizedPnl": "-0.92076944",
-      "settlementsCollected": 0,
-      "targetRounds": 3,
-      "openTime": 1771331351266
-    }
-  ],
-  "history": [
-    {
-      "time": 1771336918322,
-      "symbol": "STABLEUSDT",
-      "action": "STOP_LOSS",
-      "entryPrice": 0.027641,
-      "exitPrice": 0.026258949999999996,
-      "pnl": "-5.00",
-      "rounds": 0
+      "time": "2026-02-12T00:00:00.000Z",
+      "rate": -0.00001381,
+      "annualized": "-1.51"
     },
     {
-      "time": 1771336618117,
-      "symbol": "STABLEUSDT",
-      "action": "OPEN",
-      "entryPrice": 0.027641,
-      "exitPrice": 0,
-      "pnl": "0",
-      "rounds": 0,
-      "leverage": 2,
-      "fundingRate": "-0.2848"
+      "time": "2026-02-12T08:00:00.001Z",
+      "rate": 0.00003499,
+      "annualized": "3.83"
     },
     {
-      "time": 1771334951777,
-      "symbol": "BREVUSDT",
-      "action": "STOP_LOSS",
-      "entryPrice": 0.1396,
-      "exitPrice": 0.13262,
-      "pnl": "-5.00",
-      "rounds": 0
+      "time": "2026-02-12T16:00:00.001Z",
+      "rate": -0.00001728,
+      "annualized": "-1.89"
     },
     {
-      "time": 1771334951710,
-      "symbol": "BREVUSDT",
-      "action": "OPEN",
-      "entryPrice": 0.1396,
-      "exitPrice": 0,
-      "pnl": "0",
-      "rounds": 0,
-      "leverage": 2,
-      "fundingRate": "-0.3038"
+      "time": "2026-02-13T00:00:00.007Z",
+      "rate": 0.00005834,
+      "annualized": "6.39"
     },
     {
-      "time": 1771333451598,
-      "symbol": "AXSUSDT",
-      "action": "STOP_LOSS",
-      "entryPrice": 1.348,
-      "exitPrice": 1.2806,
-      "pnl": "-4.99",
-      "rounds": 0
+      "time": "2026-02-13T08:00:00.003Z",
+      "rate": 0.00000716,
+      "annualized": "0.78"
     },
     {
-      "time": 1771333151686,
-      "symbol": "AXSUSDT",
-      "action": "OPEN",
-      "entryPrice": 1.348,
-      "exitPrice": 0,
-      "pnl": "0",
-      "rounds": 0,
-      "leverage": 2,
-      "fundingRate": "-0.2418"
+      "time": "2026-02-13T16:00:00.005Z",
+      "rate": -0.00001274,
+      "annualized": "-1.40"
     },
     {
-      "time": 1771331351266,
-      "symbol": "LAUSDT",
-      "action": "OPEN",
-      "entryPrice": 0.2047,
-      "exitPrice": 0,
-      "pnl": "0",
-      "rounds": 0,
-      "leverage": 2,
-      "fundingRate": "-0.3290"
+      "time": "2026-02-14T00:00:00.002Z",
+      "rate": 0.00001291,
+      "annualized": "1.41"
     },
     {
-      "time": 1771331055290,
-      "symbol": "JTOUSDT",
-      "action": "STOP_LOSS",
-      "entryPrice": 0.344,
-      "exitPrice": 0.33368,
-      "pnl": "-2.99",
-      "rounds": 0
+      "time": "2026-02-14T08:00:00.004Z",
+      "rate": 0.00003174,
+      "annualized": "3.48"
     },
     {
-      "time": 1771331055287,
-      "symbol": "OGNUSDT",
-      "action": "STOP_LOSS",
-      "entryPrice": 0.0257,
-      "exitPrice": 0.024929,
-      "pnl": "-3.01",
-      "rounds": 0
+      "time": "2026-02-14T16:00:00.002Z",
+      "rate": -0.00003094,
+      "annualized": "-3.39"
     },
     {
-      "time": 1771330828299,
-      "symbol": "OGNUSDT",
-      "action": "STOP_LOSS",
-      "entryPrice": 0.0257,
-      "exitPrice": 0.024929,
-      "pnl": "-3.01",
-      "rounds": 0
+      "time": "2026-02-15T00:00:00.000Z",
+      "rate": -0.00001068,
+      "annualized": "-1.17"
     },
     {
-      "time": 1771330828294,
-      "symbol": "RIVERUSDT",
-      "action": "STOP_LOSS",
-      "entryPrice": 12.052,
-      "exitPrice": 11.690439999999999,
-      "pnl": "-2.96",
-      "rounds": 0
+      "time": "2026-02-15T08:00:00.002Z",
+      "rate": 0.00004664,
+      "annualized": "5.11"
     },
     {
-      "time": 1771330755122,
-      "symbol": "JTOUSDT",
-      "action": "OPEN",
-      "entryPrice": 0.344,
-      "exitPrice": 0,
-      "pnl": "0",
-      "rounds": 0,
-      "leverage": 2,
-      "fundingRate": "-2.0000"
+      "time": "2026-02-15T16:00:00.000Z",
+      "rate": -0.00002371,
+      "annualized": "-2.60"
     },
     {
-      "time": 1771330754922,
-      "symbol": "RIVERUSDT",
-      "action": "STOP_LOSS",
-      "entryPrice": 12.052,
-      "exitPrice": 11.690439999999999,
-      "pnl": "-2.96",
-      "rounds": 0
+      "time": "2026-02-16T00:00:00.001Z",
+      "rate": 0.00002659,
+      "annualized": "2.91"
     },
     {
-      "time": 1771325084000,
-      "symbol": "OGNUSDT",
-      "action": "OPEN",
-      "entryPrice": 0.0264,
-      "exitPrice": 0,
-      "pnl": "0",
-      "rounds": 0,
-      "leverage": 2,
-      "fundingRate": "-0.6012"
+      "time": "2026-02-16T08:00:00.003Z",
+      "rate": -0.00003277,
+      "annualized": "-3.59"
     },
     {
-      "time": 1771325084000,
-      "symbol": "OGNUSDT",
-      "action": "STOP_LOSS",
-      "entryPrice": 0.0264,
-      "exitPrice": 0.0256,
-      "pnl": "-3.01",
-      "rounds": 0
+      "time": "2026-02-16T16:00:00.000Z",
+      "rate": -0.00004112,
+      "annualized": "-4.50"
     },
     {
-      "time": 1771325084000,
-      "symbol": "OGNUSDT",
-      "action": "OPEN",
-      "entryPrice": 0.0257,
-      "exitPrice": 0,
-      "pnl": "0",
-      "rounds": 0,
-      "leverage": 2,
-      "fundingRate": "-0.5528"
+      "time": "2026-02-17T00:00:00.008Z",
+      "rate": 0.00005883,
+      "annualized": "6.44"
     },
     {
-      "time": 1771321883000,
-      "symbol": "ORCAUSDT",
-      "action": "OPEN",
-      "entryPrice": 1.156,
-      "exitPrice": 0,
-      "pnl": "0",
-      "rounds": 0,
-      "leverage": 2,
-      "fundingRate": "-0.7522"
+      "time": "2026-02-17T08:00:00.001Z",
+      "rate": 0.00002672,
+      "annualized": "2.93"
     },
     {
-      "time": 1771321791768,
-      "symbol": "RIVERUSDT",
-      "action": "OPEN",
-      "entryPrice": 12.052,
-      "exitPrice": 0,
-      "pnl": "0",
-      "rounds": 0,
-      "leverage": 2,
-      "fundingRate": "-0.8691"
+      "time": "2026-02-17T16:00:00.002Z",
+      "rate": 0.00005077,
+      "annualized": "5.56"
+    },
+    {
+      "time": "2026-02-18T00:00:00.000Z",
+      "rate": 0.00003215,
+      "annualized": "3.52"
     }
   ]
 }
