@@ -1,32 +1,19 @@
 {
-  "lastUpdate": "2026-02-18T09:21:30.894Z",
+  "lastUpdate": "2026-02-18T09:26:32.348Z",
   "strategy": "Delta Neutral 多幣種輪動 v2.0",
   "version": "2.0",
-  "btcPrice": 68169.1,
+  "btcPrice": 68172,
   "status": "open",
-  "statusText": "🟢 3 個持倉運行中",
+  "statusText": "🟢 2 個持倉運行中",
   "nextFunding": 1771430400000,
   "positions": [
-    {
-      "symbol": "WLDUSDT",
-      "spotQty": 178,
-      "futuresQty": 178,
-      "entryPrice": 0.3927,
-      "currentRate": -0.0000422,
-      "annualizedRate": "-4.6%",
-      "unrealizedPnl": 0.1246,
-      "fundingEarned": 0.0059457450359999995,
-      "fundingCount": 1,
-      "holdHours": "4.8",
-      "openTime": 1771389380662
-    },
     {
       "symbol": "CRVUSDT",
       "spotQty": 277.7,
       "futuresQty": 277.6,
       "entryPrice": 0.252,
-      "currentRate": 0.00009168,
-      "annualizedRate": "10.0%",
+      "currentRate": 0.00007522,
+      "annualizedRate": "8.2%",
       "unrealizedPnl": -0.8328,
       "fundingEarned": 0.006995520000000001,
       "fundingCount": 1,
@@ -40,7 +27,7 @@
       "entryPrice": 0.10949999999999999,
       "currentRate": 0.0001,
       "annualizedRate": "11.0%",
-      "unrealizedPnl": 0.01361068,
+      "unrealizedPnl": 0.05989854,
       "fundingEarned": 0,
       "fundingCount": 0,
       "holdHours": "0.8",
@@ -48,10 +35,10 @@
     }
   ],
   "performance": {
-    "totalFundingEarned": 0.0006160383450000001,
+    "totalFundingEarned": 0.006561783381,
     "totalTrades": 4,
-    "totalFees": 0.52290675,
-    "netProfit": -0.522290711655,
+    "totalFees": 0.62775765,
+    "netProfit": -0.621195866619,
     "closedTrades": [
       {
         "symbol": "ZENUSDT",
@@ -64,12 +51,24 @@
         "fees": 0.20804355000000002,
         "netPnl": -0.207427511655,
         "reason": "連續 4 次負費率（強制）"
+      },
+      {
+        "symbol": "WLDUSDT",
+        "openTime": 1771389380662,
+        "closeTime": 1771406790783,
+        "holdHours": 4.8,
+        "entryPrice": 0.3927,
+        "fundingEarned": 0.0059457450359999995,
+        "fundingCount": 1,
+        "fees": 0.2097018,
+        "netPnl": -0.203756054964,
+        "reason": "連續 4 次負費率（強制）"
       }
     ]
   },
   "account": {
-    "futuresBalance": "275.49",
-    "futuresAvailable": "64.83",
+    "futuresBalance": "275.67",
+    "futuresAvailable": "134.73",
     "spotUsdt": "3.96"
   },
   "rateHistory": [
