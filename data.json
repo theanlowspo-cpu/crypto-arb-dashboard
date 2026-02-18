@@ -1,137 +1,131 @@
 {
-  "lastUpdate": "2026-02-18T01:38:50.380Z",
-  "strategy": "Delta Neutral 正費率套利",
-  "version": "1.0",
-  "btcPrice": 66999.40997101,
+  "lastUpdate": "2026-02-18T04:36:26.175Z",
+  "strategy": "Delta Neutral 多幣種輪動 v2.0",
+  "version": "2.0",
+  "btcPrice": 67667.78222464,
   "status": "open",
-  "statusText": "🟢 持倉中",
-  "rates": {
-    "btc": {
-      "rate": 0.00003542,
-      "annualized": "3.88%"
+  "statusText": "🟢 2 個持倉運行中",
+  "nextFunding": 1771401600000,
+  "positions": [
+    {
+      "symbol": "WLDUSDT",
+      "spotQty": 178,
+      "futuresQty": 178,
+      "entryPrice": 0.3927,
+      "currentRate": 0.0001,
+      "annualizedRate": "11.0%",
+      "unrealizedPnl": 0,
+      "fundingEarned": 0,
+      "fundingCount": 0,
+      "holdHours": "0.0",
+      "openTime": 1771389380662
     },
-    "eth": {
-      "rate": -0.00001202,
-      "annualized": "-1.32%"
-    },
-    "nextFunding": 1771401600000,
-    "avgRate20": "0.0010%",
-    "positiveRatio": "11/20"
-  },
-  "position": {
-    "spotBtc": 0.00207008,
-    "spotValue": "138.69",
-    "futuresQty": -0.002,
-    "futuresEntry": 67291.9,
-    "futuresPnl": "0.5850",
-    "netExposure": "4.70"
+    {
+      "symbol": "ZENUSDT",
+      "spotQty": 11.2,
+      "futuresQty": 11.1,
+      "entryPrice": 6.2010000000000005,
+      "currentRate": 0.0001,
+      "annualizedRate": "11.0%",
+      "unrealizedPnl": -0.01655753,
+      "fundingEarned": 0,
+      "fundingCount": 0,
+      "holdHours": "0.0",
+      "openTime": 1771389383358
+    }
+  ],
+  "performance": {
+    "totalFundingEarned": 0,
+    "totalTrades": 2,
+    "totalFees": 0.20871765,
+    "netProfit": -0.20871765,
+    "closedTrades": []
   },
   "account": {
-    "futuresBalance": "147.28",
-    "futuresAvailable": "13.87",
-    "spotUsdt": "343.25",
-    "spotBtcValue": "138.69"
+    "futuresBalance": "146.33",
+    "futuresAvailable": "7.67",
+    "spotUsdt": "273.98"
   },
   "rateHistory": [
     {
       "time": "2026-02-11T16:00:00.000Z",
-      "rate": -0.00001169,
-      "annualized": "-1.28"
+      "rate": -0.00001169
     },
     {
       "time": "2026-02-12T00:00:00.000Z",
-      "rate": -0.00001381,
-      "annualized": "-1.51"
+      "rate": -0.00001381
     },
     {
       "time": "2026-02-12T08:00:00.001Z",
-      "rate": 0.00003499,
-      "annualized": "3.83"
+      "rate": 0.00003499
     },
     {
       "time": "2026-02-12T16:00:00.001Z",
-      "rate": -0.00001728,
-      "annualized": "-1.89"
+      "rate": -0.00001728
     },
     {
       "time": "2026-02-13T00:00:00.007Z",
-      "rate": 0.00005834,
-      "annualized": "6.39"
+      "rate": 0.00005834
     },
     {
       "time": "2026-02-13T08:00:00.003Z",
-      "rate": 0.00000716,
-      "annualized": "0.78"
+      "rate": 0.00000716
     },
     {
       "time": "2026-02-13T16:00:00.005Z",
-      "rate": -0.00001274,
-      "annualized": "-1.40"
+      "rate": -0.00001274
     },
     {
       "time": "2026-02-14T00:00:00.002Z",
-      "rate": 0.00001291,
-      "annualized": "1.41"
+      "rate": 0.00001291
     },
     {
       "time": "2026-02-14T08:00:00.004Z",
-      "rate": 0.00003174,
-      "annualized": "3.48"
+      "rate": 0.00003174
     },
     {
       "time": "2026-02-14T16:00:00.002Z",
-      "rate": -0.00003094,
-      "annualized": "-3.39"
+      "rate": -0.00003094
     },
     {
       "time": "2026-02-15T00:00:00.000Z",
-      "rate": -0.00001068,
-      "annualized": "-1.17"
+      "rate": -0.00001068
     },
     {
       "time": "2026-02-15T08:00:00.002Z",
-      "rate": 0.00004664,
-      "annualized": "5.11"
+      "rate": 0.00004664
     },
     {
       "time": "2026-02-15T16:00:00.000Z",
-      "rate": -0.00002371,
-      "annualized": "-2.60"
+      "rate": -0.00002371
     },
     {
       "time": "2026-02-16T00:00:00.001Z",
-      "rate": 0.00002659,
-      "annualized": "2.91"
+      "rate": 0.00002659
     },
     {
       "time": "2026-02-16T08:00:00.003Z",
-      "rate": -0.00003277,
-      "annualized": "-3.59"
+      "rate": -0.00003277
     },
     {
       "time": "2026-02-16T16:00:00.000Z",
-      "rate": -0.00004112,
-      "annualized": "-4.50"
+      "rate": -0.00004112
     },
     {
       "time": "2026-02-17T00:00:00.008Z",
-      "rate": 0.00005883,
-      "annualized": "6.44"
+      "rate": 0.00005883
     },
     {
       "time": "2026-02-17T08:00:00.001Z",
-      "rate": 0.00002672,
-      "annualized": "2.93"
+      "rate": 0.00002672
     },
     {
       "time": "2026-02-17T16:00:00.002Z",
-      "rate": 0.00005077,
-      "annualized": "5.56"
+      "rate": 0.00005077
     },
     {
       "time": "2026-02-18T00:00:00.000Z",
-      "rate": 0.00003215,
-      "annualized": "3.52"
+      "rate": 0.00003215
     }
   ]
 }
