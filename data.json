@@ -1,25 +1,12 @@
 {
-  "lastUpdate": "2026-02-18T10:51:31.858Z",
+  "lastUpdate": "2026-02-18T10:56:33.374Z",
   "strategy": "Delta Neutral 多幣種輪動 v2.0",
   "version": "2.0",
-  "btcPrice": 67796.58723188,
+  "btcPrice": 67770.9,
   "status": "open",
-  "statusText": "🟢 2 個持倉運行中",
+  "statusText": "🟢 1 個持倉運行中",
   "nextFunding": 1771430400000,
   "positions": [
-    {
-      "symbol": "CRVUSDT",
-      "spotQty": 277.7,
-      "futuresQty": 277.6,
-      "entryPrice": 0.252,
-      "currentRate": -0.00000916,
-      "annualizedRate": "-1.0%",
-      "unrealizedPnl": -1.30002856,
-      "fundingEarned": 0.006995520000000001,
-      "fundingCount": 1,
-      "holdHours": "5.8",
-      "openTime": 1771391187752
-    },
     {
       "symbol": "DYDXUSDT",
       "spotQty": 639.6,
@@ -27,7 +14,7 @@
       "entryPrice": 0.10949999999999999,
       "currentRate": 0.0001,
       "annualizedRate": "11.0%",
-      "unrealizedPnl": 0.24477492,
+      "unrealizedPnl": 0.3198,
       "fundingEarned": 0,
       "fundingCount": 0,
       "holdHours": "2.3",
@@ -35,10 +22,10 @@
     }
   ],
   "performance": {
-    "totalFundingEarned": 0.006561783381,
+    "totalFundingEarned": 0.013557303381,
     "totalTrades": 4,
-    "totalFees": 0.62775765,
-    "netProfit": -0.621195866619,
+    "totalFees": 0.73272825,
+    "netProfit": -0.7191709466189999,
     "closedTrades": [
       {
         "symbol": "ZENUSDT",
@@ -63,13 +50,25 @@
         "fees": 0.2097018,
         "netPnl": -0.203756054964,
         "reason": "連續 4 次負費率（強制）"
+      },
+      {
+        "symbol": "CRVUSDT",
+        "openTime": 1771391187752,
+        "closeTime": 1771412191783,
+        "holdHours": 5.8,
+        "entryPrice": 0.252,
+        "fundingEarned": 0.006995520000000001,
+        "fundingCount": 1,
+        "fees": 0.20992860000000002,
+        "netPnl": -0.20293308,
+        "reason": "連續 4 次負費率（強制）"
       }
     ]
   },
   "account": {
-    "futuresBalance": "275.67",
-    "futuresAvailable": "133.83",
-    "spotUsdt": "3.96"
+    "futuresBalance": "274.25",
+    "futuresAvailable": "204.85",
+    "spotUsdt": "74.82"
   },
   "rateHistory": [
     {
