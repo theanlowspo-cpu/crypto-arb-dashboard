@@ -1,23 +1,23 @@
 {
-  "lastUpdate": "2026-02-18T07:56:29.830Z",
+  "lastUpdate": "2026-02-18T08:01:29.882Z",
   "strategy": "Delta Neutral 多幣種輪動 v2.0",
   "version": "2.0",
-  "btcPrice": 68137.12744928,
+  "btcPrice": 68087.76806522,
   "status": "open",
   "statusText": "🟢 3 個持倉運行中",
-  "nextFunding": 1771401600000,
+  "nextFunding": 1771430400000,
   "positions": [
     {
       "symbol": "WLDUSDT",
       "spotQty": 178,
       "futuresQty": 178,
       "entryPrice": 0.3927,
-      "currentRate": 0.00008534,
+      "currentRate": 0.00008506,
       "annualizedRate": "9.3%",
-      "unrealizedPnl": 0,
-      "fundingEarned": 0,
-      "fundingCount": 0,
-      "holdHours": "3.3",
+      "unrealizedPnl": 0.06571226,
+      "fundingEarned": 0.0059457450359999995,
+      "fundingCount": 1,
+      "holdHours": "3.4",
       "openTime": 1771389380662
     },
     {
@@ -25,12 +25,12 @@
       "spotQty": 11.2,
       "futuresQty": 11.1,
       "entryPrice": 6.2010000000000005,
-      "currentRate": 0.00001858,
-      "annualizedRate": "2.0%",
-      "unrealizedPnl": -0.777,
-      "fundingEarned": 0,
-      "fundingCount": 0,
-      "holdHours": "3.3",
+      "currentRate": 0.00000895,
+      "annualizedRate": "1.0%",
+      "unrealizedPnl": -0.7881,
+      "fundingEarned": 0.0006160383450000001,
+      "fundingCount": 1,
+      "holdHours": "3.4",
       "openTime": 1771389383358
     },
     {
@@ -40,10 +40,10 @@
       "entryPrice": 0.252,
       "currentRate": 0.0001,
       "annualizedRate": "11.0%",
-      "unrealizedPnl": -0.69390839,
-      "fundingEarned": 0,
-      "fundingCount": 0,
-      "holdHours": "2.8",
+      "unrealizedPnl": -0.7137901,
+      "fundingEarned": 0.006995520000000001,
+      "fundingCount": 1,
+      "holdHours": "2.9",
       "openTime": 1771391187752
     }
   ],
@@ -55,15 +55,11 @@
     "closedTrades": []
   },
   "account": {
-    "futuresBalance": "276.29",
-    "futuresAvailable": "65.03",
+    "futuresBalance": "276.31",
+    "futuresAvailable": "65.11",
     "spotUsdt": "74.00"
   },
   "rateHistory": [
-    {
-      "time": "2026-02-11T16:00:00.000Z",
-      "rate": -0.00001169
-    },
     {
       "time": "2026-02-12T00:00:00.000Z",
       "rate": -0.00001381
@@ -139,6 +135,10 @@
     {
       "time": "2026-02-18T00:00:00.000Z",
       "rate": 0.00003215
+    },
+    {
+      "time": "2026-02-18T08:00:00.000Z",
+      "rate": -0.00000141
     }
   ]
 }
