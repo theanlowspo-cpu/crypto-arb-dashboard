@@ -1,11 +1,11 @@
 {
-  "lastUpdate": "2026-02-18T15:56:35.327Z",
+  "lastUpdate": "2026-02-18T16:01:35.457Z",
   "strategy": "Delta Neutral 多幣種輪動 v2.0",
   "version": "2.0",
-  "btcPrice": 67785.5,
+  "btcPrice": 67660.22608696,
   "status": "open",
   "statusText": "🟢 1 個持倉運行中",
-  "nextFunding": 1771430400000,
+  "nextFunding": 1771459200000,
   "positions": [
     {
       "symbol": "DYDXUSDT",
@@ -14,10 +14,10 @@
       "entryPrice": 0.10949999999999999,
       "currentRate": 0.0001,
       "annualizedRate": "11.0%",
-      "unrealizedPnl": 0.92967778,
-      "fundingEarned": 0,
-      "fundingCount": 0,
-      "holdHours": "7.3",
+      "unrealizedPnl": 0.94314136,
+      "fundingEarned": 0.0070036199999999995,
+      "fundingCount": 1,
+      "holdHours": "7.4",
       "openTime": 1771403790574
     }
   ],
@@ -78,15 +78,11 @@
     ]
   },
   "account": {
-    "futuresBalance": "274.55",
-    "futuresAvailable": "206.70",
+    "futuresBalance": "274.56",
+    "futuresAvailable": "206.73",
     "spotUsdt": "4.75"
   },
   "rateHistory": [
-    {
-      "time": "2026-02-12T00:00:00.000Z",
-      "rate": -0.00001381
-    },
     {
       "time": "2026-02-12T08:00:00.001Z",
       "rate": 0.00003499
@@ -162,6 +158,10 @@
     {
       "time": "2026-02-18T08:00:00.000Z",
       "rate": -0.00000141
+    },
+    {
+      "time": "2026-02-18T16:00:00.011Z",
+      "rate": 0.00003604
     }
   ]
 }
