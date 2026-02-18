@@ -1,8 +1,8 @@
 {
-  "lastUpdate": "2026-02-18T20:21:38.848Z",
+  "lastUpdate": "2026-02-18T20:26:38.929Z",
   "strategy": "Delta Neutral 多幣種輪動 v2.0",
   "version": "2.0",
-  "btcPrice": 66130.06548551,
+  "btcPrice": 66294,
   "status": "waiting",
   "statusText": "⏳ 等待正費率",
   "nextFunding": 1771459200000,
