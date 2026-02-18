@@ -1,10 +1,10 @@
 {
-  "lastUpdate": "2026-02-18T05:01:27.495Z",
+  "lastUpdate": "2026-02-18T05:06:31.299Z",
   "strategy": "Delta Neutral 多幣種輪動 v2.0",
   "version": "2.0",
-  "btcPrice": 67781.5,
+  "btcPrice": 67728.6,
   "status": "open",
-  "statusText": "🟢 2 個持倉運行中",
+  "statusText": "🟢 3 個持倉運行中",
   "nextFunding": 1771401600000,
   "positions": [
     {
@@ -12,12 +12,12 @@
       "spotQty": 178,
       "futuresQty": 178,
       "entryPrice": 0.3927,
-      "currentRate": 0.0001,
-      "annualizedRate": "11.0%",
-      "unrealizedPnl": 0.089,
+      "currentRate": 0.00009805,
+      "annualizedRate": "10.7%",
+      "unrealizedPnl": 0.1246,
       "fundingEarned": 0,
       "fundingCount": 0,
-      "holdHours": "0.4",
+      "holdHours": "0.5",
       "openTime": 1771389380662
     },
     {
@@ -27,24 +27,37 @@
       "entryPrice": 6.2010000000000005,
       "currentRate": 0.0001,
       "annualizedRate": "11.0%",
-      "unrealizedPnl": 0.0444,
+      "unrealizedPnl": 0.0222,
       "fundingEarned": 0,
       "fundingCount": 0,
-      "holdHours": "0.4",
+      "holdHours": "0.5",
       "openTime": 1771389383358
+    },
+    {
+      "symbol": "CRVUSDT",
+      "spotQty": 277.7,
+      "futuresQty": 277.6,
+      "entryPrice": 0.252,
+      "currentRate": 0.0001,
+      "annualizedRate": "11.0%",
+      "unrealizedPnl": -0.13865564,
+      "fundingEarned": 0,
+      "fundingCount": 0,
+      "holdHours": "0.0",
+      "openTime": 1771391187752
     }
   ],
   "performance": {
     "totalFundingEarned": 0,
-    "totalTrades": 2,
-    "totalFees": 0.20871765,
-    "netProfit": -0.20871765,
+    "totalTrades": 3,
+    "totalFees": 0.31367565,
+    "netProfit": -0.31367565,
     "closedTrades": []
   },
   "account": {
-    "futuresBalance": "226.33",
-    "futuresAvailable": "87.95",
-    "spotUsdt": "193.98"
+    "futuresBalance": "226.29",
+    "futuresAvailable": "17.97",
+    "spotUsdt": "124.00"
   },
   "rateHistory": [
     {
