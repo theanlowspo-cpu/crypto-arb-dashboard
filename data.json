@@ -1,10 +1,10 @@
 {
-  "lastUpdate": "2026-02-18T13:31:33.870Z",
+  "lastUpdate": "2026-02-18T13:36:35.773Z",
   "strategy": "Delta Neutral 多幣種輪動 v2.0",
   "version": "2.0",
-  "btcPrice": 67394.94674638,
+  "btcPrice": 67371.7,
   "status": "open",
-  "statusText": "🟢 2 個持倉運行中",
+  "statusText": "🟢 1 個持倉運行中",
   "nextFunding": 1771430400000,
   "positions": [
     {
@@ -14,31 +14,18 @@
       "entryPrice": 0.10949999999999999,
       "currentRate": 0.0001,
       "annualizedRate": "11.0%",
-      "unrealizedPnl": 1.65058374,
+      "unrealizedPnl": 1.599,
       "fundingEarned": 0,
       "fundingCount": 0,
-      "holdHours": "4.9",
+      "holdHours": "5.0",
       "openTime": 1771403790574
-    },
-    {
-      "symbol": "SEIUSDT",
-      "spotQty": 938,
-      "futuresQty": 938,
-      "entryPrice": 0.0747,
-      "currentRate": -0.00007396,
-      "annualizedRate": "-8.1%",
-      "unrealizedPnl": 0.44455572,
-      "fundingEarned": 0,
-      "fundingCount": 0,
-      "holdHours": "2.4",
-      "openTime": 1771412792226
     }
   ],
   "performance": {
     "totalFundingEarned": 0.013557303381,
     "totalTrades": 5,
-    "totalFees": 0.83783115,
-    "netProfit": -0.8242738466189999,
+    "totalFees": 0.94293405,
+    "netProfit": -0.9293767466189999,
     "closedTrades": [
       {
         "symbol": "ZENUSDT",
@@ -75,12 +62,24 @@
         "fees": 0.20992860000000002,
         "netPnl": -0.20293308,
         "reason": "連續 4 次負費率（強制）"
+      },
+      {
+        "symbol": "SEIUSDT",
+        "openTime": 1771412792226,
+        "closeTime": 1771421793783,
+        "holdHours": 2.5,
+        "entryPrice": 0.0747,
+        "fundingEarned": 0,
+        "fundingCount": 0,
+        "fees": 0.21020580000000003,
+        "netPnl": -0.21020580000000003,
+        "reason": "連續 4 次負費率（強制）"
       }
     ]
   },
   "account": {
-    "futuresBalance": "274.21",
-    "futuresAvailable": "138.80",
+    "futuresBalance": "274.55",
+    "futuresAvailable": "208.03",
     "spotUsdt": "4.75"
   },
   "rateHistory": [
