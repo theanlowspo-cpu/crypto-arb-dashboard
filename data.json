@@ -1,31 +1,17 @@
 {
-  "lastUpdate": "2026-02-18T18:51:37.612Z",
+  "lastUpdate": "2026-02-18T18:56:39.170Z",
   "strategy": "Delta Neutral 多幣種輪動 v2.0",
   "version": "2.0",
-  "btcPrice": 66387.40312319,
-  "status": "open",
-  "statusText": "🟢 1 個持倉運行中",
+  "btcPrice": 66386.47634783,
+  "status": "waiting",
+  "statusText": "⏳ 等待正費率",
   "nextFunding": 1771459200000,
-  "positions": [
-    {
-      "symbol": "DYDXUSDT",
-      "spotQty": 639.6,
-      "futuresQty": 639.6,
-      "entryPrice": 0.10949999999999999,
-      "currentRate": -3.8e-7,
-      "annualizedRate": "-0.0%",
-      "unrealizedPnl": 2.99481826,
-      "fundingEarned": 0.0070036199999999995,
-      "fundingCount": 1,
-      "holdHours": "10.3",
-      "openTime": 1771403790574
-    }
-  ],
+  "positions": [],
   "performance": {
-    "totalFundingEarned": 0.013557303381,
+    "totalFundingEarned": 0.020560923381,
     "totalTrades": 5,
-    "totalFees": 0.94293405,
-    "netProfit": -0.9293767466189999,
+    "totalFees": 1.04798835,
+    "netProfit": -1.027427426619,
     "closedTrades": [
       {
         "symbol": "ZENUSDT",
@@ -74,12 +60,24 @@
         "fees": 0.21020580000000003,
         "netPnl": -0.21020580000000003,
         "reason": "連續 4 次負費率（強制）"
+      },
+      {
+        "symbol": "DYDXUSDT",
+        "openTime": 1771403790574,
+        "closeTime": 1771440997558,
+        "holdHours": 10.3,
+        "entryPrice": 0.10949999999999999,
+        "fundingEarned": 0.0070036199999999995,
+        "fundingCount": 1,
+        "fees": 0.21010859999999998,
+        "netPnl": -0.20310498,
+        "reason": "連續 4 次負費率（強制）"
       }
     ]
   },
   "account": {
-    "futuresBalance": "274.56",
-    "futuresAvailable": "210.83",
+    "futuresBalance": "277.08",
+    "futuresAvailable": "277.08",
     "spotUsdt": "4.75"
   },
   "rateHistory": [
