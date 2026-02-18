@@ -1,8 +1,8 @@
 {
-  "lastUpdate": "2026-02-18T01:37:29.863Z",
+  "lastUpdate": "2026-02-18T01:38:50.380Z",
   "strategy": "Delta Neutral 正費率套利",
   "version": "1.0",
-  "btcPrice": 66951.6,
+  "btcPrice": 66999.40997101,
   "status": "open",
   "statusText": "🟢 持倉中",
   "rates": {
@@ -20,17 +20,17 @@
   },
   "position": {
     "spotBtc": 0.00207008,
-    "spotValue": "138.60",
+    "spotValue": "138.69",
     "futuresQty": -0.002,
     "futuresEntry": 67291.9,
-    "futuresPnl": "0.6806",
-    "netExposure": "4.69"
+    "futuresPnl": "0.5850",
+    "netExposure": "4.70"
   },
   "account": {
     "futuresBalance": "147.28",
-    "futuresAvailable": "14.05",
+    "futuresAvailable": "13.87",
     "spotUsdt": "343.25",
-    "spotBtcValue": "138.60"
+    "spotBtcValue": "138.69"
   },
   "rateHistory": [
     {
