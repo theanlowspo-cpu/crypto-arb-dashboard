@@ -1,0 +1,522 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DELTA NEUTRAL PAPER TRADING MONITOR</title>
+    <style>
+        :root {
+            --matrix-green: #00ff00;
+            --matrix-dark-green: #003300;
+            --matrix-bg: #000000;
+            --matrix-dim: #00aa00;
+            --matrix-glow: 0 0 10px #00ff00, 0 0 20px #00ff00;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            background: var(--matrix-bg);
+            color: var(--matrix-green);
+            font-family: 'Courier New', 'Consolas', monospace;
+            min-height: 100vh;
+            overflow-x: hidden;
+        }
+        
+        #matrix-canvas {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: 0;
+            opacity: 0.15;
+        }
+        
+        .container {
+            position: relative;
+            z-index: 1;
+            padding: 20px;
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+        
+        h1 {
+            text-align: center;
+            font-size: clamp(1.2rem, 4vw, 2rem);
+            text-shadow: var(--matrix-glow);
+            margin-bottom: 20px;
+            letter-spacing: 3px;
+            border-bottom: 2px solid var(--matrix-green);
+            padding-bottom: 15px;
+        }
+        
+        .last-update {
+            text-align: center;
+            font-size: 0.8rem;
+            color: var(--matrix-dim);
+            margin-bottom: 20px;
+        }
+        
+        .version-comparison {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+            margin-bottom: 30px;
+        }
+        
+        @media (max-width: 768px) {
+            .version-comparison {
+                grid-template-columns: 1fr;
+            }
+        }
+        
+        .version-panel {
+            border: 1px solid var(--matrix-green);
+            background: rgba(0, 20, 0, 0.8);
+            padding: 15px;
+            box-shadow: 0 0 15px rgba(0, 255, 0, 0.2);
+        }
+        
+        .version-title {
+            font-size: 1.3rem;
+            text-shadow: var(--matrix-glow);
+            margin-bottom: 15px;
+            padding-bottom: 10px;
+            border-bottom: 1px dashed var(--matrix-green);
+        }
+        
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 10px;
+            margin-bottom: 15px;
+        }
+        
+        @media (max-width: 480px) {
+            .stats-grid {
+                grid-template-columns: 1fr 1fr;
+            }
+        }
+        
+        .stat-item {
+            background: rgba(0, 50, 0, 0.5);
+            padding: 8px;
+            text-align: center;
+            border: 1px solid var(--matrix-dim);
+        }
+        
+        .stat-label {
+            font-size: 0.7rem;
+            color: var(--matrix-dim);
+            margin-bottom: 3px;
+        }
+        
+        .stat-value {
+            font-size: 1rem;
+            font-weight: bold;
+        }
+        
+        .section-title {
+            font-size: 0.9rem;
+            color: var(--matrix-green);
+            margin: 15px 0 10px 0;
+            text-transform: uppercase;
+            border-left: 3px solid var(--matrix-green);
+            padding-left: 8px;
+        }
+        
+        .positions-table {
+            width: 100%;
+            border-collapse: collapse;
+            font-size: 0.75rem;
+            margin-bottom: 15px;
+        }
+        
+        .positions-table th,
+        .positions-table td {
+            border: 1px solid var(--matrix-dim);
+            padding: 6px;
+            text-align: left;
+        }
+        
+        .positions-table th {
+            background: var(--matrix-dark-green);
+            color: var(--matrix-green);
+        }
+        
+        .positions-table tr:hover {
+            background: rgba(0, 255, 0, 0.1);
+        }
+        
+        .positive {
+            color: #00ff00;
+        }
+        
+        .negative {
+            color: #ff4444;
+        }
+        
+        .closed-trades {
+            max-height: 200px;
+            overflow-y: auto;
+        }
+        
+        .trade-item {
+            font-size: 0.7rem;
+            padding: 5px;
+            border-bottom: 1px solid var(--matrix-dim);
+            display: flex;
+            justify-content: space-between;
+        }
+        
+        .logs-section {
+            border: 1px solid var(--matrix-green);
+            background: rgba(0, 20, 0, 0.9);
+            padding: 15px;
+            margin-top: 30px;
+        }
+        
+        .logs-title {
+            font-size: 1rem;
+            text-shadow: var(--matrix-glow);
+            margin-bottom: 15px;
+        }
+        
+        .logs-container {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+        }
+        
+        @media (max-width: 768px) {
+            .logs-container {
+                grid-template-columns: 1fr;
+            }
+        }
+        
+        .log-panel {
+            max-height: 300px;
+            overflow-y: auto;
+            font-size: 0.65rem;
+            line-height: 1.4;
+            background: rgba(0, 0, 0, 0.5);
+            padding: 10px;
+            border: 1px solid var(--matrix-dim);
+        }
+        
+        .log-line {
+            margin-bottom: 2px;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+        }
+        
+        .log-v30 {
+            color: #00cc00;
+        }
+        
+        .log-v31 {
+            color: #00ff88;
+        }
+        
+        .no-data {
+            color: #ff6600;
+            text-align: center;
+            padding: 20px;
+        }
+        
+        .loading {
+            text-align: center;
+            padding: 40px;
+            animation: blink 1s infinite;
+        }
+        
+        @keyframes blink {
+            0%, 50% { opacity: 1; }
+            51%, 100% { opacity: 0.3; }
+        }
+        
+        .auto-refresh {
+            position: fixed;
+            bottom: 10px;
+            right: 10px;
+            font-size: 0.7rem;
+            color: var(--matrix-dim);
+            z-index: 10;
+        }
+    </style>
+</head>
+<body>
+    <canvas id="matrix-canvas"></canvas>
+    
+    <div class="container">
+        <h1>⚡ DELTA NEUTRAL PAPER TRADING MONITOR ⚡</h1>
+        
+        <div class="last-update" id="lastUpdate">載入中...</div>
+        
+        <div class="version-comparison">
+            <div class="version-panel" id="v30Panel">
+                <div class="version-title">📊 VERSION 3.0</div>
+                <div id="v30Content">
+                    <div class="loading">載入數據中...</div>
+                </div>
+            </div>
+            
+            <div class="version-panel" id="v31Panel">
+                <div class="version-title">📊 VERSION 3.1 (優化版)</div>
+                <div id="v31Content">
+                    <div class="loading">載入數據中...</div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="logs-section">
+            <div class="logs-title">📜 TERMINAL LOGS</div>
+            <div class="logs-container">
+                <div class="log-panel" id="logV30">
+                    <div class="log-line">Waiting for logs...</div>
+                </div>
+                <div class="log-panel" id="logV31">
+                    <div class="log-line">Waiting for logs...</div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <div class="auto-refresh" id="autoRefresh">60秒後自動更新...</div>
+
+    <script>
+        // Matrix Rain Effect
+        const canvas = document.getElementById('matrix-canvas');
+        const ctx = canvas.getContext('2d');
+        
+        canvas.width = window.innerWidth;
+        canvas.height = window.innerHeight;
+        
+        const katakana = 'アァカサタナハマヤャラワガザダバパイィキシチニヒミリヰギジヂビピウゥクスツヌフムユュルグズブヅプエェケセテネヘメレヱゲゼデベペオォコソトノホモヨョロヲゴゾドボポヴッン';
+        const latin = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789';
+        const nums = '0123456789';
+        const alphabet = katakana + latin + nums;
+        
+        const fontSize = 16;
+        const columns = canvas.width / fontSize;
+        const drops = [];
+        
+        for (let x = 0; x < columns; x++) {
+            drops[x] = 1;
+        }
+        
+        function drawMatrix() {
+            ctx.fillStyle = 'rgba(0, 0, 0, 0.05)';
+            ctx.fillRect(0, 0, canvas.width, canvas.height);
+            
+            ctx.fillStyle = '#0F0';
+            ctx.font = fontSize + 'px monospace';
+            
+            for (let i = 0; i < drops.length; i++) {
+                const text = alphabet.charAt(Math.floor(Math.random() * alphabet.length));
+                ctx.fillStyle = Math.random() > 0.9 ? '#fff' : '#0f0';
+                ctx.fillText(text, i * fontSize, drops[i] * fontSize);
+                
+                if (drops[i] * fontSize > canvas.height && Math.random() > 0.975) {
+                    drops[i] = 0;
+                }
+                drops[i]++;
+            }
+        }
+        
+        setInterval(drawMatrix, 33);
+        
+        window.addEventListener('resize', () => {
+            canvas.width = window.innerWidth;
+            canvas.height = window.innerHeight;
+        });
+        
+        // Data Loading
+        const DATA_URL = 'https://theanlowspo-cpu.github.io/crypto-arb-dashboard/paper_data.json';
+        let refreshCountdown = 60;
+        
+        function formatTime(timestamp) {
+            const date = new Date(timestamp);
+            return date.toLocaleString('zh-TW');
+        }
+        
+        function formatDuration(ms) {
+            const hours = Math.floor(ms / (1000 * 60 * 60));
+            const minutes = Math.floor((ms % (1000 * 60 * 60)) / (1000 * 60));
+            return hours > 0 ? hours + 'h ' + minutes + 'm' : minutes + 'm';
+        }
+        
+        function formatNumber(num, decimals = 4) {
+            if (num === null || num === undefined) return '-';
+            return typeof num === 'number' ? num.toFixed(decimals) : num;
+        }
+        
+        function formatMoney(num) {
+            if (num === null || num === undefined) return '-';
+            return '$' + (typeof num === 'number' ? num.toFixed(4) : num);
+        }
+        
+        function renderVersionPanel(data) {
+            if (!data) {
+                return '<div class="no-data">⚠️ 無數據</div>';
+            }
+            
+            let html = `
+                <div class="stats-grid">
+                    <div class="stat-item">
+                        <div class="stat-label">資金</div>
+                        <div class="stat-value">${formatMoney(data.capital)}</div>
+                    </div>
+                    <div class="stat-item">
+                        <div class="stat-label">持倉數</div>
+                        <div class="stat-value">${data.positionCount}</div>
+                    </div>
+                    <div class="stat-item">
+                        <div class="stat-label">總交易</div>
+                        <div class="stat-value">${data.totalTrades}</div>
+                    </div>
+                    <div class="stat-item">
+                        <div class="stat-label">累計費率</div>
+                        <div class="stat-value positive">${formatMoney(data.totalFundingEarned)}</div>
+                    </div>
+                    <div class="stat-item">
+                        <div class="stat-label">手續費</div>
+                        <div class="stat-value negative">-${formatMoney(data.totalFees)}</div>
+                    </div>
+                    <div class="stat-item">
+                        <div class="stat-label">淨損益</div>
+                        <div class="stat-value ${data.netPnl >= 0 ? 'positive' : 'negative'}">${formatMoney(data.netPnl)}</div>
+                    </div>
+                    <div class="stat-item">
+                        <div class="stat-label">勝率</div>
+                        <div class="stat-value">${data.winRate}%</div>
+                    </div>
+                </div>
+            `;
+            
+            if (data.positions && data.positions.length > 0) {
+                html += `
+                    <div class="section-title">持倉明細</div>
+                    <table class="positions-table">
+                        <thead>
+                            <tr>
+                                <th>幣種</th>
+                                <th>費率</th>
+                                <th>持有時間</th>
+                                <th>費率收益</th>
+                                <th>負費率</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                `;
+                
+                data.positions.forEach(pos => {
+                    const holdingTime = Date.now() - (pos.openTime || 0);
+                    const ratePercent = (pos.lastRate || 0) * 100;
+                    
+                    html += `
+                        <tr>
+                            <td>${pos.symbol}</td>
+                            <td>${ratePercent.toFixed(4)}%</td>
+                            <td>${formatDuration(holdingTime)}</td>
+                            <td class="positive">${formatMoney(pos.fundingEarned)}</td>
+                            <td class="${pos.negativeCount > 0 ? 'negative' : ''}">${pos.negativeCount || 0}</td>
+                        </tr>
+                    `;
+                });
+                
+                html += '</tbody></table>';
+            }
+            
+            if (data.closedTrades && data.closedTrades.length > 0) {
+                html += `
+                    <div class="section-title">已平倉交易 (最近10筆)</div>
+                    <div class="closed-trades">
+                `;
+                
+                data.closedTrades.forEach(trade => {
+                    html += `
+                        <div class="trade-item">
+                            <span>${trade.symbol || 'N/A'}</span>
+                            <span class="${(trade.pnl || 0) >= 0 ? 'positive' : 'negative'}">${formatMoney(trade.pnl)}</span>
+                        </div>
+                    `;
+                });
+                
+                html += '</div>';
+            }
+            
+            return html;
+        }
+        
+        function renderLogs(logs, elementId, cssClass) {
+            const element = document.getElementById(elementId);
+            
+            if (!logs || logs.length === 0) {
+                element.innerHTML = '<div class="log-line">No logs available</div>';
+                return;
+            }
+            
+            element.innerHTML = logs.map(line => 
+                '<div class="log-line ' + cssClass + '">' + line + '</div>'
+            ).join('');
+            
+            element.scrollTop = element.scrollHeight;
+        }
+        
+        async function loadData() {
+            try {
+                const response = await fetch(DATA_URL + '?t=' + Date.now());
+                
+                if (!response.ok) {
+                    throw new Error('Failed to fetch data');
+                }
+                
+                const data = await response.json();
+                
+                // Update last update time
+                document.getElementById('lastUpdate').textContent = 
+                    '最後更新: ' + formatTime(data.timestamp);
+                
+                // Render version panels
+                document.getElementById('v30Content').innerHTML = renderVersionPanel(data.v30);
+                document.getElementById('v31Content').innerHTML = renderVersionPanel(data.v31);
+                
+                // Render logs
+                if (data.logs) {
+                    renderLogs(data.logs.v30, 'logV30', 'log-v30');
+                    renderLogs(data.logs.v31, 'logV31', 'log-v31');
+                }
+                
+                // Reset countdown
+                refreshCountdown = 60;
+                
+            } catch (error) {
+                console.error('Error loading data:', error);
+                document.getElementById('lastUpdate').innerHTML = 
+                    '<span class="negative">載入失敗: ' + error.message + '</span>';
+            }
+        }
+        
+        // Auto refresh countdown
+        setInterval(() => {
+            refreshCountdown--;
+            if (refreshCountdown <= 0) {
+                refreshCountdown = 60;
+            }
+            document.getElementById('autoRefresh').textContent = 
+                refreshCountdown + '秒後自動更新...';
+        }, 1000);
+        
+        // Load data every 60 seconds
+        loadData();
+        setInterval(loadData, 60000);
+    </script>
+</body>
+</html>
