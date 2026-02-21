@@ -1,10 +1,10 @@
 {
-  "lastUpdate": "2026-02-21T22:29:07.384Z",
+  "lastUpdate": "2026-02-21T22:34:12.290Z",
   "strategy": "Delta Neutral 多幣種輪動 v2.0",
   "version": "2.0",
-  "btcPrice": 68269.20895652,
+  "btcPrice": 68193.1,
   "status": "open",
-  "statusText": "🟢 1 個持倉運行中",
+  "statusText": "🟢 3 個持倉運行中",
   "nextFunding": 1771718400000,
   "positions": [
     {
@@ -14,18 +14,44 @@
       "entryPrice": 0.2892,
       "currentRate": 0.0001,
       "annualizedRate": "11.0%",
-      "unrealizedPnl": -0.10020252,
+      "unrealizedPnl": -0.11858,
       "fundingEarned": 0,
       "fundingCount": 0,
-      "holdHours": "1.4",
+      "holdHours": "1.5",
       "openTime": 1771707844801
+    },
+    {
+      "symbol": "CTSIUSDT",
+      "spotQty": 2675,
+      "futuresQty": 2675,
+      "entryPrice": 0.026199999999999998,
+      "currentRate": 0.0001,
+      "annualizedRate": "11.0%",
+      "unrealizedPnl": -0.15678175,
+      "fundingEarned": 0,
+      "fundingCount": 0,
+      "holdHours": "0.0",
+      "openTime": 1771713245963
+    },
+    {
+      "symbol": "KSMUSDT",
+      "spotQty": 14.1,
+      "futuresQty": 14.1,
+      "entryPrice": 4.960000000000001,
+      "currentRate": 0.0001,
+      "annualizedRate": "11.0%",
+      "unrealizedPnl": 0,
+      "fundingEarned": 0,
+      "fundingCount": 0,
+      "holdHours": "0.0",
+      "openTime": 1771713249538
     }
   ],
   "performance": {
     "totalFundingEarned": 0.079547423381,
-    "totalTrades": 13,
-    "totalFees": 2.5043343300000003,
-    "netProfit": -2.4247869066190004,
+    "totalTrades": 15,
+    "totalFees": 2.71436583,
+    "netProfit": -2.6348184066190004,
     "closedTrades": [
       {
         "symbol": "WLDUSDT",
@@ -150,9 +176,9 @@
     ]
   },
   "account": {
-    "futuresBalance": "280.01",
-    "futuresAvailable": "209.86",
-    "spotUsdt": "243.14"
+    "futuresBalance": "279.94",
+    "futuresAvailable": "69.87",
+    "spotUsdt": "103.12"
   },
   "rateHistory": [
     {
