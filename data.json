@@ -1,10 +1,10 @@
 {
-  "lastUpdate": "2026-02-21T20:39:04.302Z",
+  "lastUpdate": "2026-02-21T20:44:05.886Z",
   "strategy": "Delta Neutral 多幣種輪動 v2.0",
   "version": "2.0",
-  "btcPrice": 68403.6,
+  "btcPrice": 68333.52695652,
   "status": "open",
-  "statusText": "🟢 3 個持倉運行中",
+  "statusText": "🟢 2 個持倉運行中",
   "nextFunding": 1771718400000,
   "positions": [
     {
@@ -12,12 +12,12 @@
       "spotQty": 7,
       "futuresQty": 7,
       "entryPrice": 9.28,
-      "currentRate": 0.00004064,
-      "annualizedRate": "4.5%",
-      "unrealizedPnl": 0.196,
+      "currentRate": 0.00003863,
+      "annualizedRate": "4.2%",
+      "unrealizedPnl": 0.35,
       "fundingEarned": 0.0064932,
       "fundingCount": 1,
-      "holdHours": "9.9",
+      "holdHours": "10.0",
       "openTime": 1771670664579
     },
     {
@@ -27,31 +27,18 @@
       "entryPrice": 0.1022,
       "currentRate": 0.0001,
       "annualizedRate": "11.0%",
-      "unrealizedPnl": 0.4146624,
+      "unrealizedPnl": 0.69,
       "fundingEarned": 0.00701164,
       "fundingCount": 1,
-      "holdHours": "5.6",
+      "holdHours": "5.7",
       "openTime": 1771686241884
-    },
-    {
-      "symbol": "GALAUSDT",
-      "spotQty": 17834,
-      "futuresQty": 17834,
-      "entryPrice": 0.003940000000000001,
-      "currentRate": -0.00002934,
-      "annualizedRate": "-3.2%",
-      "unrealizedPnl": 0.1382135,
-      "fundingEarned": 0,
-      "fundingCount": 0,
-      "holdHours": "3.6",
-      "openTime": 1771693441758
     }
   ],
   "performance": {
     "totalFundingEarned": 0.066042583381,
     "totalTrades": 12,
-    "totalFees": 2.09073879,
-    "netProfit": -2.024696206619,
+    "totalFees": 2.1961377300000002,
+    "netProfit": -2.1300951466190003,
     "closedTrades": [
       {
         "symbol": "ZENUSDT",
@@ -148,13 +135,25 @@
         "fees": 0.21000060000000004,
         "netPnl": -0.19667542000000005,
         "reason": "連續 4 次負費率（強制）"
+      },
+      {
+        "symbol": "GALAUSDT",
+        "openTime": 1771693441758,
+        "closeTime": 1771706644208,
+        "holdHours": 3.7,
+        "entryPrice": 0.003940000000000001,
+        "fundingEarned": 0,
+        "fundingCount": 0,
+        "fees": 0.21079788000000005,
+        "netPnl": -0.21079788000000005,
+        "reason": "連續 4 次負費率（強制）"
       }
     ]
   },
   "account": {
-    "futuresBalance": "279.55",
-    "futuresAvailable": "76.58",
-    "spotUsdt": "49.27"
+    "futuresBalance": "279.52",
+    "futuresAvailable": "147.02",
+    "spotUsdt": "118.86"
   },
   "rateHistory": [
     {
