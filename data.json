@@ -1,8 +1,8 @@
 {
-  "lastUpdate": "2026-02-21T12:13:11.411Z",
+  "lastUpdate": "2026-02-21T12:18:11.430Z",
   "strategy": "Delta Neutral 多幣種輪動 v2.0",
   "version": "2.0",
-  "btcPrice": 67940.8,
+  "btcPrice": 67930,
   "status": "open",
   "statusText": "🟢 4 個持倉運行中",
   "nextFunding": 1771689600000,
@@ -12,12 +12,12 @@
       "spotQty": 268,
       "futuresQty": 268,
       "entryPrice": 0.2601,
-      "currentRate": -0.0000523,
-      "annualizedRate": "-5.7%",
-      "unrealizedPnl": -1.38824,
+      "currentRate": -0.00005097,
+      "annualizedRate": "-5.6%",
+      "unrealizedPnl": -1.14572948,
       "fundingEarned": 0.0207896,
       "fundingCount": 4,
-      "holdHours": "12.4",
+      "holdHours": "12.5",
       "openTime": 1771631286002
     },
     {
@@ -25,12 +25,12 @@
       "spotQty": 7.83,
       "futuresQty": 7.83,
       "entryPrice": 8.940000000000001,
-      "currentRate": 0.00005553,
-      "annualizedRate": "6.1%",
-      "unrealizedPnl": -0.08613,
+      "currentRate": 0.00006206,
+      "annualizedRate": "6.8%",
+      "unrealizedPnl": 0.01187536,
       "fundingEarned": 0.01150191,
       "fundingCount": 2,
-      "holdHours": "12.4",
+      "holdHours": "12.5",
       "openTime": 1771631288799
     },
     {
@@ -40,10 +40,10 @@
       "entryPrice": 0.3908,
       "currentRate": 0.0001,
       "annualizedRate": "11.0%",
-      "unrealizedPnl": -0.8234,
+      "unrealizedPnl": -0.8198916,
       "fundingEarned": 0.01136688,
       "fundingCount": 2,
-      "holdHours": "12.4",
+      "holdHours": "12.5",
       "openTime": 1771631291499
     },
     {
@@ -53,10 +53,10 @@
       "entryPrice": 9.28,
       "currentRate": 0.0001,
       "annualizedRate": "11.0%",
-      "unrealizedPnl": 0.042,
+      "unrealizedPnl": 0.007,
       "fundingEarned": 0,
       "fundingCount": 0,
-      "holdHours": "1.5",
+      "holdHours": "1.6",
       "openTime": 1771670664579
     }
   ],
@@ -130,7 +130,7 @@
   },
   "account": {
     "futuresBalance": "282.70",
-    "futuresAvailable": "12.84",
+    "futuresAvailable": "12.96",
     "spotUsdt": "57.95"
   },
   "rateHistory": [
