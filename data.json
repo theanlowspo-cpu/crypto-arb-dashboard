@@ -1,10 +1,10 @@
 {
-  "lastUpdate": "2026-02-21T10:39:24.313Z",
+  "lastUpdate": "2026-02-21T10:44:28.673Z",
   "strategy": "Delta Neutral 多幣種輪動 v2.0",
   "version": "2.0",
-  "btcPrice": 68192.2,
+  "btcPrice": 68168.12965942,
   "status": "open",
-  "statusText": "🟢 3 個持倉運行中",
+  "statusText": "🟢 4 個持倉運行中",
   "nextFunding": 1771689600000,
   "positions": [
     {
@@ -12,8 +12,8 @@
       "spotQty": 268,
       "futuresQty": 268,
       "entryPrice": 0.2601,
-      "currentRate": 0.00000121,
-      "annualizedRate": "0.1%",
+      "currentRate": -0.00000407,
+      "annualizedRate": "-0.4%",
       "unrealizedPnl": 0,
       "fundingEarned": 0.01776343,
       "fundingCount": 3,
@@ -25,9 +25,9 @@
       "spotQty": 7.83,
       "futuresQty": 7.83,
       "entryPrice": 8.940000000000001,
-      "currentRate": 0.00007192,
-      "annualizedRate": "7.9%",
-      "unrealizedPnl": -0.03719312,
+      "currentRate": 0.00007352,
+      "annualizedRate": "8.1%",
+      "unrealizedPnl": 0.06573167,
       "fundingEarned": 0.01150191,
       "fundingCount": 2,
       "holdHours": "10.9",
@@ -38,20 +38,33 @@
       "spotQty": 179,
       "futuresQty": 179,
       "entryPrice": 0.3908,
-      "currentRate": 0.00009173,
-      "annualizedRate": "10.0%",
-      "unrealizedPnl": -1.1098,
+      "currentRate": 0.00009514,
+      "annualizedRate": "10.4%",
+      "unrealizedPnl": -0.97543902,
       "fundingEarned": 0.01136688,
       "fundingCount": 2,
       "holdHours": "10.9",
       "openTime": 1771631291499
+    },
+    {
+      "symbol": "AVAXUSDT",
+      "spotQty": 7,
+      "futuresQty": 7,
+      "entryPrice": 9.28,
+      "currentRate": 0.0001,
+      "annualizedRate": "11.0%",
+      "unrealizedPnl": -0.03216325,
+      "fundingEarned": 0,
+      "fundingCount": 0,
+      "holdHours": "0.0",
+      "openTime": 1771670664579
     }
   ],
   "performance": {
     "totalFundingEarned": 0.020560923381,
-    "totalTrades": 9,
-    "totalFees": 1.46763255,
-    "netProfit": -1.447071626619,
+    "totalTrades": 10,
+    "totalFees": 1.56507255,
+    "netProfit": -1.544511626619,
     "closedTrades": [
       {
         "symbol": "ZENUSDT",
@@ -116,9 +129,9 @@
     ]
   },
   "account": {
-    "futuresBalance": "282.76",
-    "futuresAvailable": "140.65",
-    "spotUsdt": "122.91"
+    "futuresBalance": "282.73",
+    "futuresAvailable": "76.15",
+    "spotUsdt": "57.95"
   },
   "rateHistory": [
     {
