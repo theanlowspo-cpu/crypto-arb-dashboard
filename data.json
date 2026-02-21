@@ -1,33 +1,20 @@
 {
-  "lastUpdate": "2026-02-21T12:18:11.430Z",
+  "lastUpdate": "2026-02-21T12:20:51.634Z",
   "strategy": "Delta Neutral 多幣種輪動 v2.0",
   "version": "2.0",
-  "btcPrice": 67930,
+  "btcPrice": 67970.6,
   "status": "open",
-  "statusText": "🟢 4 個持倉運行中",
+  "statusText": "🟢 3 個持倉運行中",
   "nextFunding": 1771689600000,
   "positions": [
-    {
-      "symbol": "KITEUSDT",
-      "spotQty": 268,
-      "futuresQty": 268,
-      "entryPrice": 0.2601,
-      "currentRate": -0.00005097,
-      "annualizedRate": "-5.6%",
-      "unrealizedPnl": -1.14572948,
-      "fundingEarned": 0.0207896,
-      "fundingCount": 4,
-      "holdHours": "12.5",
-      "openTime": 1771631286002
-    },
     {
       "symbol": "LINKUSDT",
       "spotQty": 7.83,
       "futuresQty": 7.83,
       "entryPrice": 8.940000000000001,
-      "currentRate": 0.00006206,
-      "annualizedRate": "6.8%",
-      "unrealizedPnl": 0.01187536,
+      "currentRate": 0.00006151,
+      "annualizedRate": "6.7%",
+      "unrealizedPnl": 0.03872146,
       "fundingEarned": 0.01150191,
       "fundingCount": 2,
       "holdHours": "12.5",
@@ -40,7 +27,7 @@
       "entryPrice": 0.3908,
       "currentRate": 0.0001,
       "annualizedRate": "11.0%",
-      "unrealizedPnl": -0.8198916,
+      "unrealizedPnl": -0.75717716,
       "fundingEarned": 0.01136688,
       "fundingCount": 2,
       "holdHours": "12.5",
@@ -53,7 +40,7 @@
       "entryPrice": 9.28,
       "currentRate": 0.0001,
       "annualizedRate": "11.0%",
-      "unrealizedPnl": 0.007,
+      "unrealizedPnl": 0.00566335,
       "fundingEarned": 0,
       "fundingCount": 0,
       "holdHours": "1.6",
@@ -61,10 +48,10 @@
     }
   ],
   "performance": {
-    "totalFundingEarned": 0.020560923381,
+    "totalFundingEarned": 0.041350523380999996,
     "totalTrades": 10,
-    "totalFees": 1.56507255,
-    "netProfit": -1.544511626619,
+    "totalFees": 1.66963275,
+    "netProfit": -1.628282226619,
     "closedTrades": [
       {
         "symbol": "ZENUSDT",
@@ -125,12 +112,24 @@
         "fees": 0.21010859999999998,
         "netPnl": -0.20310498,
         "reason": "連續 4 次負費率（強制）"
+      },
+      {
+        "symbol": "KITEUSDT",
+        "openTime": 1771631286002,
+        "closeTime": 1771676449061,
+        "holdHours": 12.5,
+        "entryPrice": 0.2601,
+        "fundingEarned": 0.0207896,
+        "fundingCount": 4,
+        "fees": 0.20912039999999998,
+        "netPnl": -0.18833080000000002,
+        "reason": "連續 4 次負費率（強制）"
       }
     ]
   },
   "account": {
     "futuresBalance": "282.70",
-    "futuresAvailable": "12.96",
+    "futuresAvailable": "13.13",
     "spotUsdt": "57.95"
   },
   "rateHistory": [
