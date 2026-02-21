@@ -1,8 +1,8 @@
 {
-  "lastUpdate": "2026-02-21T14:59:00.030Z",
+  "lastUpdate": "2026-02-21T15:04:05.160Z",
   "strategy": "Delta Neutral 多幣種輪動 v2.0",
   "version": "2.0",
-  "btcPrice": 68452.22269565,
+  "btcPrice": 68391.35115217,
   "status": "open",
   "statusText": "🟢 3 個持倉運行中",
   "nextFunding": 1771689600000,
@@ -12,26 +12,13 @@
       "spotQty": 7.83,
       "futuresQty": 7.83,
       "entryPrice": 8.940000000000001,
-      "currentRate": 0.00007045,
+      "currentRate": 0.00007043,
       "annualizedRate": "7.7%",
-      "unrealizedPnl": -0.24294164,
+      "unrealizedPnl": -0.20358,
       "fundingEarned": 0.01150191,
       "fundingCount": 2,
-      "holdHours": "15.2",
+      "holdHours": "15.3",
       "openTime": 1771631288799
-    },
-    {
-      "symbol": "WLDUSDT",
-      "spotQty": 179,
-      "futuresQty": 179,
-      "entryPrice": 0.3908,
-      "currentRate": -0.00001649,
-      "annualizedRate": "-1.8%",
-      "unrealizedPnl": -0.4833,
-      "fundingEarned": 0.01136688,
-      "fundingCount": 2,
-      "holdHours": "15.2",
-      "openTime": 1771631291499
     },
     {
       "symbol": "AVAXUSDT",
@@ -40,18 +27,31 @@
       "entryPrice": 9.28,
       "currentRate": 0.0001,
       "annualizedRate": "11.0%",
-      "unrealizedPnl": -0.59040632,
+      "unrealizedPnl": -0.616,
       "fundingEarned": 0,
       "fundingCount": 0,
-      "holdHours": "4.2",
+      "holdHours": "4.3",
       "openTime": 1771670664579
+    },
+    {
+      "symbol": "DYDXUSDT",
+      "spotQty": 690,
+      "futuresQty": 690,
+      "entryPrice": 0.1022,
+      "currentRate": 0.0001,
+      "annualizedRate": "11.0%",
+      "unrealizedPnl": -0.69,
+      "fundingEarned": 0,
+      "fundingCount": 0,
+      "holdHours": "0.0",
+      "openTime": 1771686241884
     }
   ],
   "performance": {
-    "totalFundingEarned": 0.041350523380999996,
-    "totalTrades": 10,
-    "totalFees": 1.66963275,
-    "netProfit": -1.628282226619,
+    "totalFundingEarned": 0.05271740338099999,
+    "totalTrades": 11,
+    "totalFees": 1.8803395500000002,
+    "netProfit": -1.8276221466190001,
     "closedTrades": [
       {
         "symbol": "ZENUSDT",
@@ -124,13 +124,25 @@
         "fees": 0.20912039999999998,
         "netPnl": -0.18833080000000002,
         "reason": "連續 4 次負費率（強制）"
+      },
+      {
+        "symbol": "WLDUSDT",
+        "openTime": 1771631291499,
+        "closeTime": 1771686239967,
+        "holdHours": 15.3,
+        "entryPrice": 0.3908,
+        "fundingEarned": 0.01136688,
+        "fundingCount": 2,
+        "fees": 0.20985959999999998,
+        "netPnl": -0.19849271999999998,
+        "reason": "連續 4 次負費率（強制）"
       }
     ]
   },
   "account": {
-    "futuresBalance": "279.87",
-    "futuresAvailable": "72.54",
-    "spotUsdt": "57.95"
+    "futuresBalance": "279.29",
+    "futuresAvailable": "71.77",
+    "spotUsdt": "57.37"
   },
   "rateHistory": [
     {
