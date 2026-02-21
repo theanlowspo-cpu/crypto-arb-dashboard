@@ -1,10 +1,10 @@
 {
-  "lastUpdate": "2026-02-21T22:04:05.892Z",
+  "lastUpdate": "2026-02-21T22:09:06.425Z",
   "strategy": "Delta Neutral 多幣種輪動 v2.0",
   "version": "2.0",
-  "btcPrice": 68351.2,
+  "btcPrice": 68304.08446377,
   "status": "open",
-  "statusText": "🟢 3 個持倉運行中",
+  "statusText": "🟢 2 個持倉運行中",
   "nextFunding": 1771718400000,
   "positions": [
     {
@@ -12,26 +12,13 @@
       "spotQty": 7,
       "futuresQty": 7,
       "entryPrice": 9.28,
-      "currentRate": 0.00000797,
-      "annualizedRate": "0.9%",
-      "unrealizedPnl": 0.56308539,
+      "currentRate": 0.00000189,
+      "annualizedRate": "0.2%",
+      "unrealizedPnl": 0.623,
       "fundingEarned": 0.0064932,
       "fundingCount": 1,
-      "holdHours": "11.3",
+      "holdHours": "11.4",
       "openTime": 1771670664579
-    },
-    {
-      "symbol": "DYDXUSDT",
-      "spotQty": 690,
-      "futuresQty": 690,
-      "entryPrice": 0.1022,
-      "currentRate": -0.00001145,
-      "annualizedRate": "-1.3%",
-      "unrealizedPnl": 0.5093718,
-      "fundingEarned": 0.00701164,
-      "fundingCount": 1,
-      "holdHours": "7.0",
-      "openTime": 1771686241884
     },
     {
       "symbol": "TRXUSDT",
@@ -40,18 +27,18 @@
       "entryPrice": 0.2892,
       "currentRate": 0.0001,
       "annualizedRate": "11.0%",
-      "unrealizedPnl": -0.10928962,
+      "unrealizedPnl": -0.06013942,
       "fundingEarned": 0,
       "fundingCount": 0,
-      "holdHours": "1.0",
+      "holdHours": "1.1",
       "openTime": 1771707844801
     }
   ],
   "performance": {
-    "totalFundingEarned": 0.066042583381,
+    "totalFundingEarned": 0.073054223381,
     "totalTrades": 13,
-    "totalFees": 2.3011173300000003,
-    "netProfit": -2.2350747466190004,
+    "totalFees": 2.40689433,
+    "netProfit": -2.333840106619,
     "closedTrades": [
       {
         "symbol": "ZENUSDT",
@@ -160,13 +147,25 @@
         "fees": 0.21079788000000005,
         "netPnl": -0.21079788000000005,
         "reason": "連續 4 次負費率（強制）"
+      },
+      {
+        "symbol": "DYDXUSDT",
+        "openTime": 1771686241884,
+        "closeTime": 1771711745454,
+        "holdHours": 7.1,
+        "entryPrice": 0.1022,
+        "fundingEarned": 0.00701164,
+        "fundingCount": 1,
+        "fees": 0.21155400000000002,
+        "netPnl": -0.20454236,
+        "reason": "連續 4 次負費率（強制）"
       }
     ]
   },
   "account": {
-    "futuresBalance": "279.48",
-    "futuresAvailable": "76.89",
-    "spotUsdt": "48.88"
+    "futuresBalance": "279.45",
+    "futuresAvailable": "145.74",
+    "spotUsdt": "188.12"
   },
   "rateHistory": [
     {
