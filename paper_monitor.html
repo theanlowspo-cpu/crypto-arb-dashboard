@@ -93,6 +93,7 @@
         .stats-grid {
             display: grid;
             grid-template-columns: repeat(3, 1fr);
+            /* 9 items: 3x3 grid */
             gap: 10px;
             margin-bottom: 15px;
         }
@@ -395,7 +396,48 @@
                     </div>
                     <div class="stat-item">
                         <div class="stat-label">勝率</div>
-                        <div class="stat-value">${data.winRate}%</div>
+                        <div class="stat-value">${data.closedTrades && data.closedTrades.length > 0 ? data.winRate + '%' : '尚無數據'}</div>
+                    </div>
+                    <div class="stat-item">
+                        <div class="stat-label">📈 預估收益</div>
+                        <div class="stat-value ${(function(){
+                            let est = 0;
+                            if(data.positions) data.positions.forEach(p => est += (p.fundingEarned || 0));
+                            est -= (data.totalFees || 0);
+                            return est >= 0 ? 'positive' : 'negative';
+                        })()}">${(function(){
+                            let est = 0;
+                            if(data.positions) data.positions.forEach(p => est += (p.fundingEarned || 0));
+                            est -= (data.totalFees || 0);
+                            if(data.closedTrades) data.closedTrades.forEach(t => est += (t.netPnl || t.pnl || 0));
+                            return formatMoney(est);
+                        })()}</div>
+                    </div>
+                    <div class="stat-item">
+                        <div class="stat-label">📈 預估年化</div>
+                        <div class="stat-value ${(function(){
+                            let est = 0;
+                            if(data.positions) data.positions.forEach(p => est += (p.fundingEarned || 0));
+                            est -= (data.totalFees || 0);
+                            if(data.closedTrades) data.closedTrades.forEach(t => est += (t.netPnl || t.pnl || 0));
+                            let earliest = Date.now();
+                            if(data.positions) data.positions.forEach(p => { if(p.openTime && p.openTime < earliest) earliest = p.openTime; });
+                            let days = (Date.now() - earliest) / 86400000;
+                            if(days < 0.1) days = 0.1;
+                            let annual = (est / (data.capital || 1000)) / days * 365 * 100;
+                            return annual >= 0 ? 'positive' : 'negative';
+                        })()}">${(function(){
+                            let est = 0;
+                            if(data.positions) data.positions.forEach(p => est += (p.fundingEarned || 0));
+                            est -= (data.totalFees || 0);
+                            if(data.closedTrades) data.closedTrades.forEach(t => est += (t.netPnl || t.pnl || 0));
+                            let earliest = Date.now();
+                            if(data.positions) data.positions.forEach(p => { if(p.openTime && p.openTime < earliest) earliest = p.openTime; });
+                            let days = (Date.now() - earliest) / 86400000;
+                            if(days < 0.1) days = 0.1;
+                            let annual = (est / (data.capital || 1000)) / days * 365 * 100;
+                            return annual.toFixed(1) + '%';
+                        })()}</div>
                     </div>
                 </div>
             `;
