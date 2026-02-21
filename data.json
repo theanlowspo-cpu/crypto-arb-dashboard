@@ -1,8 +1,8 @@
 {
-  "lastUpdate": "2026-02-21T08:29:22.450Z",
+  "lastUpdate": "2026-02-21T08:34:22.450Z",
   "strategy": "Delta Neutral 多幣種輪動 v2.0",
   "version": "2.0",
-  "btcPrice": 67941.54155797,
+  "btcPrice": 67950.7,
   "status": "open",
   "statusText": "🟢 3 個持倉運行中",
   "nextFunding": 1771689600000,
@@ -12,12 +12,12 @@
       "spotQty": 268,
       "futuresQty": 268,
       "entryPrice": 0.2601,
-      "currentRate": 0.00002495,
-      "annualizedRate": "2.7%",
-      "unrealizedPnl": 6.88113852,
+      "currentRate": 0.00002025,
+      "annualizedRate": "2.2%",
+      "unrealizedPnl": 7.17325852,
       "fundingEarned": 0.01776343,
       "fundingCount": 3,
-      "holdHours": "8.7",
+      "holdHours": "8.8",
       "openTime": 1771631286002
     },
     {
@@ -25,12 +25,12 @@
       "spotQty": 7.83,
       "futuresQty": 7.83,
       "entryPrice": 8.940000000000001,
-      "currentRate": 0.00005807,
-      "annualizedRate": "6.4%",
-      "unrealizedPnl": 0.47676674,
+      "currentRate": 0.00005703,
+      "annualizedRate": "6.2%",
+      "unrealizedPnl": 0.44631,
       "fundingEarned": 0.01150191,
       "fundingCount": 2,
-      "holdHours": "8.7",
+      "holdHours": "8.8",
       "openTime": 1771631288799
     },
     {
@@ -38,12 +38,12 @@
       "spotQty": 179,
       "futuresQty": 179,
       "entryPrice": 0.3908,
-      "currentRate": 0.00006903,
-      "annualizedRate": "7.6%",
-      "unrealizedPnl": -0.3938,
+      "currentRate": 0.00007349,
+      "annualizedRate": "8.0%",
+      "unrealizedPnl": -0.5012,
       "fundingEarned": 0.01136688,
       "fundingCount": 2,
-      "holdHours": "8.7",
+      "holdHours": "8.8",
       "openTime": 1771631291499
     }
   ],
@@ -117,7 +117,7 @@
   },
   "account": {
     "futuresBalance": "276.38",
-    "futuresAvailable": "80.69",
+    "futuresAvailable": "80.98",
     "spotUsdt": "59.78"
   },
   "rateHistory": [
