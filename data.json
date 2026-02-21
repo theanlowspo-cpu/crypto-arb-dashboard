@@ -1,8 +1,8 @@
 {
-  "lastUpdate": "2026-02-21T02:20:08.051Z",
+  "lastUpdate": "2026-02-21T02:25:09.015Z",
   "strategy": "Delta Neutral 多幣種輪動 v2.0",
   "version": "2.0",
-  "btcPrice": 67962.6,
+  "btcPrice": 68008.7,
   "status": "open",
   "statusText": "🟢 4 個持倉運行中",
   "nextFunding": 1771660800000,
@@ -12,12 +12,12 @@
       "spotQty": 285.7,
       "futuresQty": 285.6,
       "entryPrice": 0.24540000000000003,
-      "currentRate": 0.0001,
-      "annualizedRate": "11.0%",
+      "currentRate": 0.00008543,
+      "annualizedRate": "9.4%",
       "unrealizedPnl": 0,
       "fundingEarned": 0,
       "fundingCount": 0,
-      "holdHours": "52.8",
+      "holdHours": "52.9",
       "openTime": 1771450305797
     },
     {
@@ -27,10 +27,10 @@
       "entryPrice": 0.2601,
       "currentRate": 0.00005,
       "annualizedRate": "5.5%",
-      "unrealizedPnl": 0.74082972,
+      "unrealizedPnl": 0.85448852,
       "fundingEarned": 0.01119967,
       "fundingCount": 1,
-      "holdHours": "2.5",
+      "holdHours": "2.6",
       "openTime": 1771631286002
     },
     {
@@ -40,10 +40,10 @@
       "entryPrice": 8.940000000000001,
       "currentRate": 0.0001,
       "annualizedRate": "11.0%",
-      "unrealizedPnl": -0.18945898,
+      "unrealizedPnl": -0.18224857,
       "fundingEarned": 0.00699835,
       "fundingCount": 1,
-      "holdHours": "2.5",
+      "holdHours": "2.6",
       "openTime": 1771631288799
     },
     {
@@ -51,12 +51,12 @@
       "spotQty": 179,
       "futuresQty": 179,
       "entryPrice": 0.3908,
-      "currentRate": 0.00006151,
-      "annualizedRate": "6.7%",
-      "unrealizedPnl": -0.28991556,
+      "currentRate": 0.00006821,
+      "annualizedRate": "7.5%",
+      "unrealizedPnl": -0.45546371,
       "fundingEarned": 0.00699353,
       "fundingCount": 1,
-      "holdHours": "2.5",
+      "holdHours": "2.6",
       "openTime": 1771631291499
     }
   ],
@@ -130,7 +130,7 @@
   },
   "account": {
     "futuresBalance": "276.36",
-    "futuresAvailable": "67.27",
+    "futuresAvailable": "67.15",
     "spotUsdt": "59.78"
   },
   "rateHistory": [
