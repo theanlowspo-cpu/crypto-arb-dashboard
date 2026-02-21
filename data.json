@@ -1,25 +1,12 @@
 {
-  "lastUpdate": "2026-02-21T22:24:05.754Z",
+  "lastUpdate": "2026-02-21T22:29:07.384Z",
   "strategy": "Delta Neutral 多幣種輪動 v2.0",
   "version": "2.0",
-  "btcPrice": 68277.94433333,
+  "btcPrice": 68269.20895652,
   "status": "open",
-  "statusText": "🟢 2 個持倉運行中",
+  "statusText": "🟢 1 個持倉運行中",
   "nextFunding": 1771718400000,
   "positions": [
-    {
-      "symbol": "AVAXUSDT",
-      "spotQty": 7,
-      "futuresQty": 7,
-      "entryPrice": 9.28,
-      "currentRate": -0.0000161,
-      "annualizedRate": "-1.8%",
-      "unrealizedPnl": 0.62714988,
-      "fundingEarned": 0.0064932,
-      "fundingCount": 1,
-      "holdHours": "11.7",
-      "openTime": 1771670664579
-    },
     {
       "symbol": "TRXUSDT",
       "spotQty": 242,
@@ -27,31 +14,19 @@
       "entryPrice": 0.2892,
       "currentRate": 0.0001,
       "annualizedRate": "11.0%",
-      "unrealizedPnl": -0.10109792,
+      "unrealizedPnl": -0.10020252,
       "fundingEarned": 0,
       "fundingCount": 0,
-      "holdHours": "1.3",
+      "holdHours": "1.4",
       "openTime": 1771707844801
     }
   ],
   "performance": {
-    "totalFundingEarned": 0.073054223381,
+    "totalFundingEarned": 0.079547423381,
     "totalTrades": 13,
-    "totalFees": 2.40689433,
-    "netProfit": -2.333840106619,
+    "totalFees": 2.5043343300000003,
+    "netProfit": -2.4247869066190004,
     "closedTrades": [
-      {
-        "symbol": "ZENUSDT",
-        "openTime": 1771389383358,
-        "closeTime": 1771403190131,
-        "holdHours": 3.8,
-        "entryPrice": 6.2010000000000005,
-        "fundingEarned": 0.0006160383450000001,
-        "fundingCount": 1,
-        "fees": 0.20804355000000002,
-        "netPnl": -0.207427511655,
-        "reason": "連續 4 次負費率（強制）"
-      },
       {
         "symbol": "WLDUSDT",
         "openTime": 1771389380662,
@@ -159,13 +134,25 @@
         "fees": 0.21155400000000002,
         "netPnl": -0.20454236,
         "reason": "連續 4 次負費率（強制）"
+      },
+      {
+        "symbol": "AVAXUSDT",
+        "openTime": 1771670664579,
+        "closeTime": 1771712945744,
+        "holdHours": 11.7,
+        "entryPrice": 9.28,
+        "fundingEarned": 0.0064932,
+        "fundingCount": 1,
+        "fees": 0.19488,
+        "netPnl": -0.18838679999999997,
+        "reason": "連續 4 次負費率（強制）"
       }
     ]
   },
   "account": {
-    "futuresBalance": "279.45",
-    "futuresAvailable": "145.67",
-    "spotUsdt": "188.12"
+    "futuresBalance": "280.01",
+    "futuresAvailable": "209.86",
+    "spotUsdt": "243.14"
   },
   "rateHistory": [
     {
