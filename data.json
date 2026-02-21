@@ -1,8 +1,8 @@
 {
-  "lastUpdate": "2026-02-21T11:23:10.534Z",
+  "lastUpdate": "2026-02-21T11:28:10.659Z",
   "strategy": "Delta Neutral 多幣種輪動 v2.0",
   "version": "2.0",
-  "btcPrice": 68228.89899275,
+  "btcPrice": 68158,
   "status": "open",
   "statusText": "🟢 4 個持倉運行中",
   "nextFunding": 1771689600000,
@@ -12,12 +12,12 @@
       "spotQty": 268,
       "futuresQty": 268,
       "entryPrice": 0.2601,
-      "currentRate": -0.00002764,
+      "currentRate": -0.00002744,
       "annualizedRate": "-3.0%",
-      "unrealizedPnl": -0.067,
+      "unrealizedPnl": -0.08844,
       "fundingEarned": 0.01776343,
       "fundingCount": 3,
-      "holdHours": "11.6",
+      "holdHours": "11.7",
       "openTime": 1771631286002
     },
     {
@@ -25,12 +25,12 @@
       "spotQty": 7.83,
       "futuresQty": 7.83,
       "entryPrice": 8.940000000000001,
-      "currentRate": 0.00006938,
-      "annualizedRate": "7.6%",
-      "unrealizedPnl": -0.28851349,
+      "currentRate": 0.00006842,
+      "annualizedRate": "7.5%",
+      "unrealizedPnl": -0.21141,
       "fundingEarned": 0.01150191,
       "fundingCount": 2,
-      "holdHours": "11.6",
+      "holdHours": "11.7",
       "openTime": 1771631288799
     },
     {
@@ -38,12 +38,12 @@
       "spotQty": 179,
       "futuresQty": 179,
       "entryPrice": 0.3908,
-      "currentRate": 0.0001,
-      "annualizedRate": "11.0%",
-      "unrealizedPnl": -1.1415188,
+      "currentRate": 0.00009756,
+      "annualizedRate": "10.7%",
+      "unrealizedPnl": -0.9487,
       "fundingEarned": 0.01136688,
       "fundingCount": 2,
-      "holdHours": "11.6",
+      "holdHours": "11.7",
       "openTime": 1771631291499
     },
     {
@@ -53,10 +53,10 @@
       "entryPrice": 9.28,
       "currentRate": 0.0001,
       "annualizedRate": "11.0%",
-      "unrealizedPnl": -0.11981368,
+      "unrealizedPnl": -0.063,
       "fundingEarned": 0,
       "fundingCount": 0,
-      "holdHours": "0.6",
+      "holdHours": "0.7",
       "openTime": 1771670664579
     }
   ],
@@ -130,7 +130,7 @@
   },
   "account": {
     "futuresBalance": "282.70",
-    "futuresAvailable": "11.45",
+    "futuresAvailable": "12.12",
     "spotUsdt": "57.95"
   },
   "rateHistory": [
