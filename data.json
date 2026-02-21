@@ -1,23 +1,23 @@
 {
-  "lastUpdate": "2026-02-20T23:55:04.929Z",
+  "lastUpdate": "2026-02-21T00:00:06.179Z",
   "strategy": "Delta Neutral 多幣種輪動 v2.0",
   "version": "2.0",
-  "btcPrice": 67988.09613623,
+  "btcPrice": 67997.88357246,
   "status": "open",
   "statusText": "🟢 4 個持倉運行中",
-  "nextFunding": 1771632000000,
+  "nextFunding": 1771660800000,
   "positions": [
     {
       "symbol": "CRVUSDT",
       "spotQty": 285.7,
       "futuresQty": 285.6,
       "entryPrice": 0.24540000000000003,
-      "currentRate": 0.00002643,
-      "annualizedRate": "2.9%",
+      "currentRate": 0.0000129,
+      "annualizedRate": "1.4%",
       "unrealizedPnl": 0,
       "fundingEarned": 0,
       "fundingCount": 0,
-      "holdHours": "50.4",
+      "holdHours": "50.5",
       "openTime": 1771450305797
     },
     {
@@ -25,12 +25,12 @@
       "spotQty": 268,
       "futuresQty": 268,
       "entryPrice": 0.2601,
-      "currentRate": 0.00016666,
-      "annualizedRate": "18.2%",
-      "unrealizedPnl": -0.12645312,
-      "fundingEarned": 0,
-      "fundingCount": 0,
-      "holdHours": "0.1",
+      "currentRate": 0.00015926,
+      "annualizedRate": "17.4%",
+      "unrealizedPnl": -0.52588836,
+      "fundingEarned": 0.01119967,
+      "fundingCount": 1,
+      "holdHours": "0.2",
       "openTime": 1771631286002
     },
     {
@@ -40,10 +40,10 @@
       "entryPrice": 8.940000000000001,
       "currentRate": 0.0001,
       "annualizedRate": "11.0%",
-      "unrealizedPnl": -0.07047,
-      "fundingEarned": 0,
-      "fundingCount": 0,
-      "holdHours": "0.1",
+      "unrealizedPnl": -0.0783,
+      "fundingEarned": 0.00699835,
+      "fundingCount": 1,
+      "holdHours": "0.2",
       "openTime": 1771631288799
     },
     {
@@ -53,10 +53,10 @@
       "entryPrice": 0.3908,
       "currentRate": 0.0001,
       "annualizedRate": "11.0%",
-      "unrealizedPnl": -0.22001248,
-      "fundingEarned": 0,
-      "fundingCount": 0,
-      "holdHours": "0.1",
+      "unrealizedPnl": -0.0358,
+      "fundingEarned": 0.00699353,
+      "fundingCount": 1,
+      "holdHours": "0.2",
       "openTime": 1771631291499
     }
   ],
@@ -129,15 +129,11 @@
     ]
   },
   "account": {
-    "futuresBalance": "276.34",
-    "futuresAvailable": "65.88",
+    "futuresBalance": "276.36",
+    "futuresAvailable": "65.40",
     "spotUsdt": "60.51"
   },
   "rateHistory": [
-    {
-      "time": "2026-02-14T08:00:00.004Z",
-      "rate": 0.00003174
-    },
     {
       "time": "2026-02-14T16:00:00.002Z",
       "rate": -0.00003094
@@ -213,6 +209,10 @@
     {
       "time": "2026-02-20T16:00:00.000Z",
       "rate": -0.00000671
+    },
+    {
+      "time": "2026-02-21T00:00:00.004Z",
+      "rate": 0.00004456
     }
   ]
 }
