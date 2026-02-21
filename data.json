@@ -1,10 +1,10 @@
 {
-  "lastUpdate": "2026-02-21T20:59:04.645Z",
+  "lastUpdate": "2026-02-21T21:04:08.524Z",
   "strategy": "Delta Neutral 多幣種輪動 v2.0",
   "version": "2.0",
-  "btcPrice": 68294.1915,
+  "btcPrice": 68229.4,
   "status": "open",
-  "statusText": "🟢 2 個持倉運行中",
+  "statusText": "🟢 3 個持倉運行中",
   "nextFunding": 1771718400000,
   "positions": [
     {
@@ -12,12 +12,12 @@
       "spotQty": 7,
       "futuresQty": 7,
       "entryPrice": 9.28,
-      "currentRate": 0.00003909,
-      "annualizedRate": "4.3%",
-      "unrealizedPnl": 0.590849,
+      "currentRate": 0.000037,
+      "annualizedRate": "4.1%",
+      "unrealizedPnl": 0.693,
       "fundingEarned": 0.0064932,
       "fundingCount": 1,
-      "holdHours": "10.2",
+      "holdHours": "10.3",
       "openTime": 1771670664579
     },
     {
@@ -27,18 +27,31 @@
       "entryPrice": 0.1022,
       "currentRate": 0.0001,
       "annualizedRate": "11.0%",
-      "unrealizedPnl": 1.0201581,
+      "unrealizedPnl": 1.0311291,
       "fundingEarned": 0.00701164,
       "fundingCount": 1,
-      "holdHours": "5.9",
+      "holdHours": "6.0",
       "openTime": 1771686241884
+    },
+    {
+      "symbol": "TRXUSDT",
+      "spotQty": 242,
+      "futuresQty": 242,
+      "entryPrice": 0.2892,
+      "currentRate": 0.0001,
+      "annualizedRate": "11.0%",
+      "unrealizedPnl": -0.00242,
+      "fundingEarned": 0,
+      "fundingCount": 0,
+      "holdHours": "0.0",
+      "openTime": 1771707844801
     }
   ],
   "performance": {
     "totalFundingEarned": 0.066042583381,
-    "totalTrades": 12,
-    "totalFees": 2.1961377300000002,
-    "netProfit": -2.1300951466190003,
+    "totalTrades": 13,
+    "totalFees": 2.3011173300000003,
+    "netProfit": -2.2350747466190004,
     "closedTrades": [
       {
         "symbol": "ZENUSDT",
@@ -151,9 +164,9 @@
     ]
   },
   "account": {
-    "futuresBalance": "279.52",
-    "futuresAvailable": "148.17",
-    "spotUsdt": "118.86"
+    "futuresBalance": "279.48",
+    "futuresAvailable": "78.06",
+    "spotUsdt": "48.88"
   },
   "rateHistory": [
     {
