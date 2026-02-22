@@ -1,11 +1,11 @@
 {
-  "lastUpdate": "2026-02-22T07:59:13.079Z",
+  "lastUpdate": "2026-02-22T08:04:16.993Z",
   "strategy": "Delta Neutral 多幣種輪動 v2.0",
   "version": "2.0",
-  "btcPrice": 67980.9,
+  "btcPrice": 67965.41928333,
   "status": "open",
-  "statusText": "🟢 2 個持倉運行中",
-  "nextFunding": 1771747200000,
+  "statusText": "🟢 3 個持倉運行中",
+  "nextFunding": 1771776000000,
   "positions": [
     {
       "symbol": "CTSIUSDT",
@@ -14,10 +14,10 @@
       "entryPrice": 0.026199999999999998,
       "currentRate": 0.0001,
       "annualizedRate": "11.0%",
-      "unrealizedPnl": 1.73875,
-      "fundingEarned": 0.00696144,
-      "fundingCount": 1,
-      "holdHours": "9.4",
+      "unrealizedPnl": 1.73813475,
+      "fundingEarned": 0.01378269,
+      "fundingCount": 2,
+      "holdHours": "9.5",
       "openTime": 1771713245963
     },
     {
@@ -27,18 +27,31 @@
       "entryPrice": 0.2381,
       "currentRate": 0.0001,
       "annualizedRate": "11.0%",
-      "unrealizedPnl": 1.04254226,
+      "unrealizedPnl": 1.03177463,
+      "fundingEarned": 0.00687886,
+      "fundingCount": 1,
+      "holdHours": "6.5",
+      "openTime": 1771724048472
+    },
+    {
+      "symbol": "ARBUSDT",
+      "spotQty": 731,
+      "futuresQty": 731,
+      "entryPrice": 0.0958,
+      "currentRate": 0.0001,
+      "annualizedRate": "11.0%",
+      "unrealizedPnl": -0.03568742,
       "fundingEarned": 0,
       "fundingCount": 0,
-      "holdHours": "6.4",
-      "openTime": 1771724048472
+      "holdHours": "0.0",
+      "openTime": 1771747453338
     }
   ],
   "performance": {
     "totalFundingEarned": 0.089414673381,
-    "totalTrades": 17,
-    "totalFees": 3.23984771,
-    "netProfit": -3.150433036619,
+    "totalTrades": 18,
+    "totalFees": 3.34489241,
+    "netProfit": -3.255477736619,
     "closedTrades": [
       {
         "symbol": "DYDXUSDT",
@@ -163,15 +176,11 @@
     ]
   },
   "account": {
-    "futuresBalance": "282.11",
-    "futuresAvailable": "147.88",
-    "spotUsdt": "169.12"
+    "futuresBalance": "282.09",
+    "futuresAvailable": "77.78",
+    "spotUsdt": "99.09"
   },
   "rateHistory": [
-    {
-      "time": "2026-02-15T16:00:00.000Z",
-      "rate": -0.00002371
-    },
     {
       "time": "2026-02-16T00:00:00.001Z",
       "rate": 0.00002659
@@ -247,6 +256,10 @@
     {
       "time": "2026-02-22T00:00:00.001Z",
       "rate": 0.0000073
+    },
+    {
+      "time": "2026-02-22T08:00:00.004Z",
+      "rate": 4.2e-7
     }
   ]
 }
