@@ -1,10 +1,10 @@
 {
-  "lastUpdate": "2026-02-22T01:29:08.252Z",
+  "lastUpdate": "2026-02-22T01:34:12.205Z",
   "strategy": "Delta Neutral 多幣種輪動 v2.0",
   "version": "2.0",
-  "btcPrice": 68078.8,
+  "btcPrice": 68050,
   "status": "open",
-  "statusText": "🟢 3 個持倉運行中",
+  "statusText": "🟢 4 個持倉運行中",
   "nextFunding": 1771747200000,
   "positions": [
     {
@@ -14,10 +14,10 @@
       "entryPrice": 0.2892,
       "currentRate": 0.0001,
       "annualizedRate": "11.0%",
-      "unrealizedPnl": -0.0847,
+      "unrealizedPnl": -0.07018,
       "fundingEarned": 0.00699355,
       "fundingCount": 1,
-      "holdHours": "4.4",
+      "holdHours": "4.5",
       "openTime": 1771707844801
     },
     {
@@ -27,10 +27,10 @@
       "entryPrice": 0.026199999999999998,
       "currentRate": 0.0001,
       "annualizedRate": "11.0%",
-      "unrealizedPnl": 1.47373775,
+      "unrealizedPnl": 1.411758,
       "fundingEarned": 0.00696144,
       "fundingCount": 1,
-      "holdHours": "2.9",
+      "holdHours": "3.0",
       "openTime": 1771713245963
     },
     {
@@ -43,15 +43,28 @@
       "unrealizedPnl": 0.27108,
       "fundingEarned": 0,
       "fundingCount": 0,
-      "holdHours": "1.4",
+      "holdHours": "1.5",
       "openTime": 1771718647390
+    },
+    {
+      "symbol": "CRVUSDT",
+      "spotQty": 294.7,
+      "futuresQty": 294.6,
+      "entryPrice": 0.2381,
+      "currentRate": 0.0001,
+      "annualizedRate": "11.0%",
+      "unrealizedPnl": -0.14679034,
+      "fundingEarned": 0,
+      "fundingCount": 0,
+      "holdHours": "0.0",
+      "openTime": 1771724048472
     }
   ],
   "performance": {
     "totalFundingEarned": 0.082421123381,
-    "totalTrades": 16,
-    "totalFees": 2.92444887,
-    "netProfit": -2.842027746619,
+    "totalTrades": 17,
+    "totalFees": 3.02968907,
+    "netProfit": -2.9472679466189997,
     "closedTrades": [
       {
         "symbol": "CRVUSDT",
@@ -176,9 +189,9 @@
     ]
   },
   "account": {
-    "futuresBalance": "280.82",
-    "futuresAvailable": "74.43",
-    "spotUsdt": "101.25"
+    "futuresBalance": "280.78",
+    "futuresAvailable": "4.11",
+    "spotUsdt": "31.09"
   },
   "rateHistory": [
     {
