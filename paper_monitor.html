@@ -64,7 +64,7 @@
         
         .version-comparison {
             display: grid;
-            grid-template-columns: 1fr 1fr;
+            grid-template-columns: repeat(3, 1fr);
             gap: 20px;
             margin-bottom: 30px;
         }
@@ -93,7 +93,6 @@
         .stats-grid {
             display: grid;
             grid-template-columns: repeat(3, 1fr);
-            /* 9 items: 3x3 grid */
             gap: 10px;
             margin-bottom: 15px;
         }
@@ -190,7 +189,7 @@
         
         .logs-container {
             display: grid;
-            grid-template-columns: 1fr 1fr;
+            grid-template-columns: repeat(3, 1fr);
             gap: 20px;
         }
         
@@ -223,6 +222,10 @@
         
         .log-v31 {
             color: #00ff88;
+        }
+
+        .log-v32 {
+            color: #66ccff;
         }
         
         .no-data {
@@ -274,6 +277,13 @@
                     <div class="loading">載入數據中...</div>
                 </div>
             </div>
+
+            <div class="version-panel" id="v32Panel">
+                <div class="version-title">🚀 VERSION 3.2 (最賺版)</div>
+                <div id="v32Content">
+                    <div class="loading">載入數據中...</div>
+                </div>
+            </div>
         </div>
         
         <div class="logs-section">
@@ -283,6 +293,9 @@
                     <div class="log-line">Waiting for logs...</div>
                 </div>
                 <div class="log-panel" id="logV31">
+                    <div class="log-line">Waiting for logs...</div>
+                </div>
+                <div class="log-panel" id="logV32">
                     <div class="log-line">Waiting for logs...</div>
                 </div>
             </div>
@@ -396,48 +409,7 @@
                     </div>
                     <div class="stat-item">
                         <div class="stat-label">勝率</div>
-                        <div class="stat-value">${data.closedTrades && data.closedTrades.length > 0 ? data.winRate + '%' : '尚無數據'}</div>
-                    </div>
-                    <div class="stat-item">
-                        <div class="stat-label">📈 預估收益</div>
-                        <div class="stat-value ${(function(){
-                            let est = 0;
-                            if(data.positions) data.positions.forEach(p => est += (p.fundingEarned || 0));
-                            est -= (data.totalFees || 0);
-                            return est >= 0 ? 'positive' : 'negative';
-                        })()}">${(function(){
-                            let est = 0;
-                            if(data.positions) data.positions.forEach(p => est += (p.fundingEarned || 0));
-                            est -= (data.totalFees || 0);
-                            if(data.closedTrades) data.closedTrades.forEach(t => est += (t.netPnl || t.pnl || 0));
-                            return formatMoney(est);
-                        })()}</div>
-                    </div>
-                    <div class="stat-item">
-                        <div class="stat-label">📈 預估年化</div>
-                        <div class="stat-value ${(function(){
-                            let est = 0;
-                            if(data.positions) data.positions.forEach(p => est += (p.fundingEarned || 0));
-                            est -= (data.totalFees || 0);
-                            if(data.closedTrades) data.closedTrades.forEach(t => est += (t.netPnl || t.pnl || 0));
-                            let earliest = Date.now();
-                            if(data.positions) data.positions.forEach(p => { if(p.openTime && p.openTime < earliest) earliest = p.openTime; });
-                            let days = (Date.now() - earliest) / 86400000;
-                            if(days < 0.1) days = 0.1;
-                            let annual = (est / (data.capital || 1000)) / days * 365 * 100;
-                            return annual >= 0 ? 'positive' : 'negative';
-                        })()}">${(function(){
-                            let est = 0;
-                            if(data.positions) data.positions.forEach(p => est += (p.fundingEarned || 0));
-                            est -= (data.totalFees || 0);
-                            if(data.closedTrades) data.closedTrades.forEach(t => est += (t.netPnl || t.pnl || 0));
-                            let earliest = Date.now();
-                            if(data.positions) data.positions.forEach(p => { if(p.openTime && p.openTime < earliest) earliest = p.openTime; });
-                            let days = (Date.now() - earliest) / 86400000;
-                            if(days < 0.1) days = 0.1;
-                            let annual = (est / (data.capital || 1000)) / days * 365 * 100;
-                            return annual.toFixed(1) + '%';
-                        })()}</div>
+                        <div class="stat-value">${data.winRate}%</div>
                     </div>
                 </div>
             `;
@@ -529,11 +501,13 @@
                 // Render version panels
                 document.getElementById('v30Content').innerHTML = renderVersionPanel(data.v30);
                 document.getElementById('v31Content').innerHTML = renderVersionPanel(data.v31);
+                document.getElementById('v32Content').innerHTML = renderVersionPanel(data.v32);
                 
                 // Render logs
                 if (data.logs) {
                     renderLogs(data.logs.v30, 'logV30', 'log-v30');
                     renderLogs(data.logs.v31, 'logV31', 'log-v31');
+                    renderLogs(data.logs.v32, 'logV32', 'log-v32');
                 }
                 
                 // Reset countdown
