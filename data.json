@@ -1,10 +1,10 @@
 {
-  "lastUpdate": "2026-02-22T04:09:10.492Z",
+  "lastUpdate": "2026-02-22T04:14:12.078Z",
   "strategy": "Delta Neutral 多幣種輪動 v2.0",
   "version": "2.0",
-  "btcPrice": 68021.28099275,
+  "btcPrice": 68032.85288406,
   "status": "open",
-  "statusText": "🟢 4 個持倉運行中",
+  "statusText": "🟢 3 個持倉運行中",
   "nextFunding": 1771747200000,
   "positions": [
     {
@@ -14,10 +14,10 @@
       "entryPrice": 0.2892,
       "currentRate": 0.0001,
       "annualizedRate": "11.0%",
-      "unrealizedPnl": 0.121,
+      "unrealizedPnl": 0.11444664,
       "fundingEarned": 0.00699355,
       "fundingCount": 1,
-      "holdHours": "7.1",
+      "holdHours": "7.2",
       "openTime": 1771707844801
     },
     {
@@ -27,24 +27,11 @@
       "entryPrice": 0.026199999999999998,
       "currentRate": 0.0001,
       "annualizedRate": "11.0%",
-      "unrealizedPnl": 3.20580025,
+      "unrealizedPnl": 3.07625,
       "fundingEarned": 0.00696144,
       "fundingCount": 1,
-      "holdHours": "5.6",
+      "holdHours": "5.7",
       "openTime": 1771713245963
-    },
-    {
-      "symbol": "GALAUSDT",
-      "spotQty": 18072,
-      "futuresQty": 18072,
-      "entryPrice": 0.00388,
-      "currentRate": -0.00001674,
-      "annualizedRate": "-1.8%",
-      "unrealizedPnl": 1.17468,
-      "fundingEarned": 0,
-      "fundingCount": 0,
-      "holdHours": "4.1",
-      "openTime": 1771718647390
     },
     {
       "symbol": "CRVUSDT",
@@ -53,31 +40,19 @@
       "entryPrice": 0.2381,
       "currentRate": 0.0001,
       "annualizedRate": "11.0%",
-      "unrealizedPnl": 0.73771375,
+      "unrealizedPnl": 0.72599456,
       "fundingEarned": 0,
       "fundingCount": 0,
-      "holdHours": "2.6",
+      "holdHours": "2.7",
       "openTime": 1771724048472
     }
   ],
   "performance": {
     "totalFundingEarned": 0.082421123381,
     "totalTrades": 17,
-    "totalFees": 3.02968907,
-    "netProfit": -2.9472679466189997,
+    "totalFees": 3.1348681099999998,
+    "netProfit": -3.0524469866189996,
     "closedTrades": [
-      {
-        "symbol": "CRVUSDT",
-        "openTime": 1771391187752,
-        "closeTime": 1771412191783,
-        "holdHours": 5.8,
-        "entryPrice": 0.252,
-        "fundingEarned": 0.006995520000000001,
-        "fundingCount": 1,
-        "fees": 0.20992860000000002,
-        "netPnl": -0.20293308,
-        "reason": "連續 4 次負費率（強制）"
-      },
       {
         "symbol": "SEIUSDT",
         "openTime": 1771412792226,
@@ -185,13 +160,25 @@
         "fees": 0.20980800000000005,
         "netPnl": -0.20693430000000002,
         "reason": "連續 4 次負費率（強制）"
+      },
+      {
+        "symbol": "GALAUSDT",
+        "openTime": 1771718647390,
+        "closeTime": 1771733650403,
+        "holdHours": 4.2,
+        "entryPrice": 0.00388,
+        "fundingEarned": 0,
+        "fundingCount": 0,
+        "fees": 0.21035808,
+        "netPnl": -0.21035808,
+        "reason": "連續 4 次負費率（強制）"
       }
     ]
   },
   "account": {
-    "futuresBalance": "280.78",
-    "futuresAvailable": "11.73",
-    "spotUsdt": "31.09"
+    "futuresBalance": "281.83",
+    "futuresAvailable": "80.07",
+    "spotUsdt": "99.80"
   },
   "rateHistory": [
     {
