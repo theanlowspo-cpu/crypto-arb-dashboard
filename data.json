@@ -1,8 +1,8 @@
 {
-  "lastUpdate": "2026-02-22T07:44:12.942Z",
+  "lastUpdate": "2026-02-22T07:49:12.973Z",
   "strategy": "Delta Neutral 多幣種輪動 v2.0",
   "version": "2.0",
-  "btcPrice": 68047.96314167,
+  "btcPrice": 68032.00841667,
   "status": "open",
   "statusText": "🟢 2 個持倉運行中",
   "nextFunding": 1771747200000,
@@ -14,10 +14,10 @@
       "entryPrice": 0.026199999999999998,
       "currentRate": 0.0001,
       "annualizedRate": "11.0%",
-      "unrealizedPnl": 2.4075,
+      "unrealizedPnl": 1.605,
       "fundingEarned": 0.00696144,
       "fundingCount": 1,
-      "holdHours": "9.2",
+      "holdHours": "9.3",
       "openTime": 1771713245963
     },
     {
@@ -27,10 +27,10 @@
       "entryPrice": 0.2381,
       "currentRate": 0.0001,
       "annualizedRate": "11.0%",
-      "unrealizedPnl": 1.03135335,
+      "unrealizedPnl": 1.03108232,
       "fundingEarned": 0,
       "fundingCount": 0,
-      "holdHours": "6.2",
+      "holdHours": "6.3",
       "openTime": 1771724048472
     }
   ],
@@ -164,7 +164,7 @@
   },
   "account": {
     "futuresBalance": "282.11",
-    "futuresAvailable": "149.35",
+    "futuresAvailable": "147.75",
     "spotUsdt": "169.12"
   },
   "rateHistory": [
