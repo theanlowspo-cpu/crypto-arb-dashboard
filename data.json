@@ -1,17 +1,44 @@
 {
-  "lastUpdate": "2026-02-22T15:29:18.608Z",
+  "lastUpdate": "2026-02-22T15:34:25.230Z",
   "strategy": "Delta Neutral 多幣種輪動 v2.0",
   "version": "2.0",
-  "btcPrice": 67529.1,
-  "status": "waiting",
-  "statusText": "⏳ 等待正費率",
+  "btcPrice": 67591.15515217,
+  "status": "open",
+  "statusText": "🟢 2 個持倉運行中",
   "nextFunding": 1771776000000,
-  "positions": [],
+  "positions": [
+    {
+      "symbol": "ATOMUSDT",
+      "spotQty": 31.02,
+      "futuresQty": 31.02,
+      "entryPrice": 2.258,
+      "currentRate": 0.0001,
+      "annualizedRate": "11.0%",
+      "unrealizedPnl": -0.0400068,
+      "fundingEarned": 0,
+      "fundingCount": 0,
+      "holdHours": "0.0",
+      "openTime": 1771774458896
+    },
+    {
+      "symbol": "WLDUSDT",
+      "spotQty": 184,
+      "futuresQty": 184,
+      "entryPrice": 0.38079999999999997,
+      "currentRate": 0.0001,
+      "annualizedRate": "11.0%",
+      "unrealizedPnl": -0.00948704,
+      "fundingEarned": 0,
+      "fundingCount": 0,
+      "holdHours": "0.0",
+      "openTime": 1771774462489
+    }
+  ],
   "performance": {
     "totalFundingEarned": 0.110076223381,
-    "totalTrades": 18,
-    "totalFees": 3.660316715,
-    "netProfit": -3.550240491619,
+    "totalTrades": 20,
+    "totalFees": 3.8704822549999998,
+    "netProfit": -3.7604060316189996,
     "closedTrades": [
       {
         "symbol": "LINKUSDT",
@@ -136,9 +163,9 @@
     ]
   },
   "account": {
-    "futuresBalance": "285.01",
-    "futuresAvailable": "285.01",
-    "spotUsdt": "305.22"
+    "futuresBalance": "284.94",
+    "futuresAvailable": "144.90",
+    "spotUsdt": "165.11"
   },
   "rateHistory": [
     {
