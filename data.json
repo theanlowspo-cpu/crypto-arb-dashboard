@@ -1,25 +1,12 @@
 {
-  "lastUpdate": "2026-02-22T10:49:15.112Z",
+  "lastUpdate": "2026-02-22T10:54:16.571Z",
   "strategy": "Delta Neutral 多幣種輪動 v2.0",
   "version": "2.0",
-  "btcPrice": 68073.23216667,
+  "btcPrice": 68118.51598551,
   "status": "open",
-  "statusText": "🟢 2 個持倉運行中",
+  "statusText": "🟢 1 個持倉運行中",
   "nextFunding": 1771776000000,
   "positions": [
-    {
-      "symbol": "CTSIUSDT",
-      "spotQty": 2675,
-      "futuresQty": 2675,
-      "entryPrice": 0.026199999999999998,
-      "currentRate": -0.00004429,
-      "annualizedRate": "-4.8%",
-      "unrealizedPnl": 1.3375,
-      "fundingEarned": 0.01378269,
-      "fundingCount": 2,
-      "holdHours": "12.3",
-      "openTime": 1771713245963
-    },
     {
       "symbol": "ARBUSDT",
       "spotQty": 731,
@@ -27,7 +14,7 @@
       "entryPrice": 0.0958,
       "currentRate": 0.0001,
       "annualizedRate": "11.0%",
-      "unrealizedPnl": -0.5117,
+      "unrealizedPnl": -0.50301572,
       "fundingEarned": 0,
       "fundingCount": 0,
       "holdHours": "2.8",
@@ -35,23 +22,11 @@
     }
   ],
   "performance": {
-    "totalFundingEarned": 0.096293533381,
+    "totalFundingEarned": 0.110076223381,
     "totalTrades": 18,
-    "totalFees": 3.450144515,
-    "netProfit": -3.353850981619,
+    "totalFees": 3.555272015,
+    "netProfit": -3.4451957916189997,
     "closedTrades": [
-      {
-        "symbol": "KITEUSDT",
-        "openTime": 1771631286002,
-        "closeTime": 1771676449061,
-        "holdHours": 12.5,
-        "entryPrice": 0.2601,
-        "fundingEarned": 0.0207896,
-        "fundingCount": 4,
-        "fees": 0.20912039999999998,
-        "netPnl": -0.18833080000000002,
-        "reason": "連續 4 次負費率（強制）"
-      },
       {
         "symbol": "WLDUSDT",
         "openTime": 1771631291499,
@@ -159,13 +134,25 @@
         "fees": 0.210492305,
         "netPnl": -0.203613445,
         "reason": "連續 4 次負費率（強制）"
+      },
+      {
+        "symbol": "CTSIUSDT",
+        "openTime": 1771713245963,
+        "closeTime": 1771757655000,
+        "holdHours": 12.3,
+        "entryPrice": 0.026199999999999998,
+        "fundingEarned": 0.01378269,
+        "fundingCount": 2,
+        "fees": 0.21025499999999997,
+        "netPnl": -0.19647230999999998,
+        "reason": "連續 4 次負費率（強制）"
       }
     ]
   },
   "account": {
-    "futuresBalance": "283.23",
-    "futuresAvailable": "145.11",
-    "spotUsdt": "167.61"
+    "futuresBalance": "284.54",
+    "futuresAvailable": "213.57",
+    "spotUsdt": "235.94"
   },
   "rateHistory": [
     {
