@@ -1,10 +1,10 @@
 {
-  "lastUpdate": "2026-02-22T09:34:14.433Z",
+  "lastUpdate": "2026-02-22T09:39:15.796Z",
   "strategy": "Delta Neutral 多幣種輪動 v2.0",
   "version": "2.0",
-  "btcPrice": 67997.2885431,
+  "btcPrice": 67983.02117391,
   "status": "open",
-  "statusText": "🟢 3 個持倉運行中",
+  "statusText": "🟢 2 個持倉運行中",
   "nextFunding": 1771776000000,
   "positions": [
     {
@@ -14,24 +14,11 @@
       "entryPrice": 0.026199999999999998,
       "currentRate": 0.0001,
       "annualizedRate": "11.0%",
-      "unrealizedPnl": 1.3007455,
+      "unrealizedPnl": 1.594193,
       "fundingEarned": 0.01378269,
       "fundingCount": 2,
-      "holdHours": "11.0",
+      "holdHours": "11.1",
       "openTime": 1771713245963
-    },
-    {
-      "symbol": "CRVUSDT",
-      "spotQty": 294.7,
-      "futuresQty": 294.6,
-      "entryPrice": 0.2381,
-      "currentRate": -0.00004518,
-      "annualizedRate": "-4.9%",
-      "unrealizedPnl": 1.32698445,
-      "fundingEarned": 0.00687886,
-      "fundingCount": 1,
-      "holdHours": "8.0",
-      "openTime": 1771724048472
     },
     {
       "symbol": "ARBUSDT",
@@ -40,31 +27,19 @@
       "entryPrice": 0.0958,
       "currentRate": 0.0001,
       "annualizedRate": "11.0%",
-      "unrealizedPnl": -0.03620643,
+      "unrealizedPnl": -0.0731,
       "fundingEarned": 0,
       "fundingCount": 0,
-      "holdHours": "1.5",
+      "holdHours": "1.6",
       "openTime": 1771747453338
     }
   ],
   "performance": {
-    "totalFundingEarned": 0.089414673381,
+    "totalFundingEarned": 0.096293533381,
     "totalTrades": 18,
-    "totalFees": 3.34489241,
-    "netProfit": -3.255477736619,
+    "totalFees": 3.450144515,
+    "netProfit": -3.353850981619,
     "closedTrades": [
-      {
-        "symbol": "DYDXUSDT",
-        "openTime": 1771403790574,
-        "closeTime": 1771440997558,
-        "holdHours": 10.3,
-        "entryPrice": 0.10949999999999999,
-        "fundingEarned": 0.0070036199999999995,
-        "fundingCount": 1,
-        "fees": 0.21010859999999998,
-        "netPnl": -0.20310498,
-        "reason": "連續 4 次負費率（強制）"
-      },
       {
         "symbol": "KITEUSDT",
         "openTime": 1771631286002,
@@ -172,13 +147,25 @@
         "fees": 0.2099592,
         "netPnl": -0.20296565,
         "reason": "連續 4 次負費率（強制）"
+      },
+      {
+        "symbol": "CRVUSDT",
+        "openTime": 1771724048472,
+        "closeTime": 1771753154150,
+        "holdHours": 8.1,
+        "entryPrice": 0.2381,
+        "fundingEarned": 0.00687886,
+        "fundingCount": 1,
+        "fees": 0.210492305,
+        "netPnl": -0.203613445,
+        "reason": "連續 4 次負費率（強制）"
       }
     ]
   },
   "account": {
-    "futuresBalance": "282.09",
-    "futuresAvailable": "77.68",
-    "spotUsdt": "99.09"
+    "futuresBalance": "283.23",
+    "futuresAvailable": "146.50",
+    "spotUsdt": "167.61"
   },
   "rateHistory": [
     {
