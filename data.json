@@ -1,44 +1,18 @@
 {
-  "lastUpdate": "2026-02-22T11:59:16.071Z",
+  "lastUpdate": "2026-02-22T12:04:17.934Z",
   "strategy": "Delta Neutral 多幣種輪動 v2.0",
   "version": "2.0",
-  "btcPrice": 68180.05510145,
-  "status": "open",
-  "statusText": "🟢 1 個持倉運行中",
+  "btcPrice": 68106.5,
+  "status": "waiting",
+  "statusText": "⏳ 等待正費率",
   "nextFunding": 1771776000000,
-  "positions": [
-    {
-      "symbol": "ARBUSDT",
-      "spotQty": 731,
-      "futuresQty": 731,
-      "entryPrice": 0.0958,
-      "currentRate": -0.00003875,
-      "annualizedRate": "-4.2%",
-      "unrealizedPnl": 0.03956903,
-      "fundingEarned": 0,
-      "fundingCount": 0,
-      "holdHours": "3.9",
-      "openTime": 1771747453338
-    }
-  ],
+  "positions": [],
   "performance": {
     "totalFundingEarned": 0.110076223381,
     "totalTrades": 18,
-    "totalFees": 3.555272015,
-    "netProfit": -3.4451957916189997,
+    "totalFees": 3.660316715,
+    "netProfit": -3.550240491619,
     "closedTrades": [
-      {
-        "symbol": "WLDUSDT",
-        "openTime": 1771631291499,
-        "closeTime": 1771686239967,
-        "holdHours": 15.3,
-        "entryPrice": 0.3908,
-        "fundingEarned": 0.01136688,
-        "fundingCount": 2,
-        "fees": 0.20985959999999998,
-        "netPnl": -0.19849271999999998,
-        "reason": "連續 4 次負費率（強制）"
-      },
       {
         "symbol": "LINKUSDT",
         "openTime": 1771631288799,
@@ -146,13 +120,25 @@
         "fees": 0.21025499999999997,
         "netPnl": -0.19647230999999998,
         "reason": "連續 4 次負費率（強制）"
+      },
+      {
+        "symbol": "ARBUSDT",
+        "openTime": 1771747453338,
+        "closeTime": 1771761856031,
+        "holdHours": 4,
+        "entryPrice": 0.0958,
+        "fundingEarned": 0,
+        "fundingCount": 0,
+        "fees": 0.21008939999999998,
+        "netPnl": -0.21008939999999998,
+        "reason": "連續 4 次負費率（強制）"
       }
     ]
   },
   "account": {
-    "futuresBalance": "284.54",
-    "futuresAvailable": "214.66",
-    "spotUsdt": "235.94"
+    "futuresBalance": "285.01",
+    "futuresAvailable": "285.01",
+    "spotUsdt": "305.22"
   },
   "rateHistory": [
     {
