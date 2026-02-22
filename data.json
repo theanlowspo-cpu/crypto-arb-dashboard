@@ -1,25 +1,12 @@
 {
-  "lastUpdate": "2026-02-22T05:49:11.459Z",
+  "lastUpdate": "2026-02-22T05:54:13.059Z",
   "strategy": "Delta Neutral 多幣種輪動 v2.0",
   "version": "2.0",
-  "btcPrice": 67864.2,
+  "btcPrice": 67888.7,
   "status": "open",
-  "statusText": "🟢 3 個持倉運行中",
+  "statusText": "🟢 2 個持倉運行中",
   "nextFunding": 1771747200000,
   "positions": [
-    {
-      "symbol": "TRXUSDT",
-      "spotQty": 242,
-      "futuresQty": 242,
-      "entryPrice": 0.2892,
-      "currentRate": -0.00002616,
-      "annualizedRate": "-2.9%",
-      "unrealizedPnl": 0.3834611,
-      "fundingEarned": 0.00699355,
-      "fundingCount": 1,
-      "holdHours": "8.8",
-      "openTime": 1771707844801
-    },
     {
       "symbol": "CTSIUSDT",
       "spotQty": 2675,
@@ -27,7 +14,7 @@
       "entryPrice": 0.026199999999999998,
       "currentRate": 0.0001,
       "annualizedRate": "11.0%",
-      "unrealizedPnl": 3.076036,
+      "unrealizedPnl": 3.3765455,
       "fundingEarned": 0.00696144,
       "fundingCount": 1,
       "holdHours": "7.3",
@@ -40,7 +27,7 @@
       "entryPrice": 0.2381,
       "currentRate": 0.0001,
       "annualizedRate": "11.0%",
-      "unrealizedPnl": 1.31308228,
+      "unrealizedPnl": 1.3291969,
       "fundingEarned": 0,
       "fundingCount": 0,
       "holdHours": "4.3",
@@ -48,23 +35,11 @@
     }
   ],
   "performance": {
-    "totalFundingEarned": 0.082421123381,
+    "totalFundingEarned": 0.089414673381,
     "totalTrades": 17,
-    "totalFees": 3.1348681099999998,
-    "netProfit": -3.0524469866189996,
+    "totalFees": 3.23984771,
+    "netProfit": -3.150433036619,
     "closedTrades": [
-      {
-        "symbol": "SEIUSDT",
-        "openTime": 1771412792226,
-        "closeTime": 1771421793783,
-        "holdHours": 2.5,
-        "entryPrice": 0.0747,
-        "fundingEarned": 0,
-        "fundingCount": 0,
-        "fees": 0.21020580000000003,
-        "netPnl": -0.21020580000000003,
-        "reason": "連續 4 次負費率（強制）"
-      },
       {
         "symbol": "DYDXUSDT",
         "openTime": 1771403790574,
@@ -172,13 +147,25 @@
         "fees": 0.21035808,
         "netPnl": -0.21035808,
         "reason": "連續 4 次負費率（強制）"
+      },
+      {
+        "symbol": "TRXUSDT",
+        "openTime": 1771707844801,
+        "closeTime": 1771739651413,
+        "holdHours": 8.8,
+        "entryPrice": 0.2892,
+        "fundingEarned": 0.00699355,
+        "fundingCount": 1,
+        "fees": 0.2099592,
+        "netPnl": -0.20296565,
+        "reason": "連續 4 次負費率（強制）"
       }
     ]
   },
   "account": {
-    "futuresBalance": "281.83",
-    "futuresAvailable": "81.79",
-    "spotUsdt": "99.80"
+    "futuresBalance": "282.11",
+    "futuresAvailable": "151.72",
+    "spotUsdt": "169.12"
   },
   "rateHistory": [
     {
